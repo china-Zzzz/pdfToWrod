@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset = "utf-8">
+<title>PDF卸载统计</title>
+</head>
+<script>
+/**
+ * 区分正式线测试线（用于百度统计id切换）lineSwitch = "TRUE" 测试线 lineSwitch = "FALSE" 正式线
+ */
+function SetTestStyle(lineSwitch){
+
+	if(lineSwitch === 'TRUE'){
+
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?91e98ec408e85cb2614397f1b160ccaf";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+
+	} else {
+
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?222ee08ff0e1c45d4f29c5228817609a";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+
+	}
+
+}
+</script>
+<body>
+
+</body>
+<script type="text/javascript" src="statistics.js"></script>
+</html>

@@ -1,0 +1,97 @@
+/*
+*网站全局/CSS重置表
+*http://www.lvyou114.com     2014-1-14
+*小菜
+*/
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,
+dl, dt, dd, ul, ol, li,
+pre,
+form, fieldset, legend, button, input, textarea,
+th, td {
+    margin: 0;
+    padding: 0;
+}
+*{
+    font-family: "微软雅黑"
+}
+input::-ms-clear{display: none;}
+input::-ms-reveal{display: none;}
+/*设置默认字体*/
+h1,h2,h3,h4,h5,h6{font-weight: 400;}
+h1{font-size: 24px;}
+h2{font-size: 18px;}
+h3{font-size: 16px;}
+h4{font-size: 14px;}
+h5{font-size: 12px;}
+h6 {font-size: 10px;}
+address, cite, dfn, em, var, i { font-style: normal; }
+code, kbd, pre, samp { font-family: courier new, courier, monospace; }
+small { font-size: 12px; }
+/*重置列表元素*/
+ul, ol { list-style: none; }
+/*重置文本格式元素*/
+a,
+a:hover { text-decoration: none; }
+a{color: #555;outline:none;-moz-outline:none;}
+a:hover{color: #f60;}
+a img{display: block;}
+sup { vertical-align: text-top; }
+sub { vertical-align: text-bottom; }
+/*重置表单元素*/
+legend { color: #000; } /* for ie6 */
+fieldset, img { border: 0; }
+button, input, select, textarea { font-size: 100%; }
+/*重置表格元素*/
+table { border-collapse: collapse; border-spacing: 0; }
+/* 重置 HTML5 元素 */
+article, aside, details, figcaption, figure, footer,header, hgroup, menu, nav, section,
+summary, time, mark, audio, video {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+mark { background: #ff0; }
+/*全局*/
+.fl{float: left!important;}
+.fr{float: right!important;}
+.s{font-weight: 400;}
+.b{font-weight: 700;}
+.b0{border: 0!important;}
+/*字体大小*/
+.f12{font-size: 12px!important;}
+.f14{font-size: 14px!important;}
+.f16{font-size: 16px!important;}
+.f18{font-size: 18px!important;}
+.f20{font-size: 20px!important;}
+.f24{font-size: 24px!important;}
+.f30{font-size: 30px!important;}
+.f36{font-size: 36px!important;}
+.f42{font-size: 42px!important;}
+/*颜色*/
+.f50{color: #f50!important;}
+.f80{color: #f80!important;}
+.c5{color: #555!important;}
+.c8{color: #888!important;}
+/*间距*/
+.m0{margin: 0!important}
+.mt0{margin-top: 0!important}
+.mt10{margin-top: 10px!important}
+.mt20{margin-top: 20px!important}
+.mt30{margin-top: 30px!important}
+.mt40{margin-top: 40px!important}
+.ml0{margin-left: 0!important}
+.ml10{margin-left: 10px!important}
+.mr20{margin-right: 20px!important}
+.p0{padding: 0!important}
+.pt0{padding-top: 0!important}
+.pl0{padding-left: 0!important}
+/*字体图标*/
+@font-face {font-family: 'iconfont';
+    src: url('/libs/iconfont/iconfont.eot'); 
+    src: url('/libs/iconfont/iconfont.eot?#iefix') format('embedded-opentype'), 
+    url('/libs/iconfont/iconfont.woff') format('woff'), 
+    url('/libs/iconfont/iconfont.ttf') format('truetype'),
+    url('/libs/iconfont/iconfont.svg#svgFontName') format('svg'); 
+}
+.iconfont{font-family:"iconfont";font-size:16px;}

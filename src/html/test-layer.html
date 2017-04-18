@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset = "utf-8">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<title>PDF转WORD弹框 测试</title>
+</head>
+<!--[if lt IE 9]>
+<script src="../js/html5.js"></script>
+<script src="../js/json.js"></script>
+<![endif]-->
+<body scroll="no">
+  <button class="test" data-type="data">
+    还未登录
+  </button>
+  <button class="test" data-type="data1">
+    升级会员
+  </button>
+  <button class="test" data-type="data2">
+    创建桌面快捷方式
+  </button>
+  <button class="test" data-type="data3">
+    设置转换页数
+  </button>
+  <button class="test" data-type="data4">
+    是否进行升级
+  </button>
+  <button class="test" data-type="data5">
+    已经是最新版本
+  </button>
+  <button class="test" data-type="data6">
+    正在下载新版本
+  </button>
+  <button class="test" data-type="data7">
+    下载成功
+  </button>
+  <button class="test" data-type="data8">
+    下载失败
+  </button>
+  <button class="test" data-type="data9">
+    支付
+  </button>
+  <button class="test" data-type="data10">
+    继续安装
+  </button>
+  <button class="test" data-type="data11">
+    支付成功
+  </button>
+  <button class="test" data-type="data12">
+    密码输入
+  </button>
+</body>
+<script src="../js/jquery.js"></script>
+<script src="../js/b64.js"></script>
+<script type="text/javascript">
+//登录
+var _data;
+var data = {
+    "type":"1",//弹框类型（"1" 普通弹框， "2" 进度条弹框，"3" 支付弹框 , "4"密码弹框）
+    "option":{
+        "title":"提示",//title名
+        "text":["抱歉，您还未登录，请先完成登录","操作，再进行转换页数范围的设置"],//弹框内容
+        "button":[{
+            "text":"取消",
+            "background-color":"not",
+            "type":"delete"
+        },{
+            "text":'登录',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"land"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
+var data1 = {
+    "type":"1",//弹框类型（"1" 普通弹框， "2" 进度条弹框，"3" 支付弹框 , "4"密码弹框）
+    "option":{
+        "title":"提示",//title名
+        "text":["抱歉，您还不是会员，无法设置转","换页数范围，请升级为会员后再试"],//弹框内容
+        "button":[{
+            "text":"取消",
+            "background-color":"not",
+            "type":"delete"
+        },{
+            "text":'升级会员',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"member"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
+var data2 = {
+    "type":"1",//弹框类型（"1" 普通弹框， "2" 进度条弹框，"3" 支付弹框 , "4"密码弹框）
+    "option":{
+        "title":"创建桌面快捷方式",//title名
+        "text":["创建桌面快捷方式，下次从桌面直","接双击打开福昕PDF转Word"],//弹框内容
+        "button":[{
+            "text":"取消",
+            "background-color":"not",
+            "type":"delete"
+        },{
+            "text":'确定',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"found"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
+var data3= {
+    "type":"5",//弹框类型（"5" 页数弹框)
+    "option":{
+        "title":"设置转换页数",//title名
+        "pages":{"begin":"1","end":"17"},//转换页数
+        "button":[{
+            "text":"取消",
+            "background-color":"not",//按钮颜色
+            "type":"delete"
+        },{
+            "text":'确定',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"pages"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete),found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
+var data4 = {
+ "type":"1",
+ "option":{
+        "width":"width:378px",
+        "title":"检查更新",//title名
+        "text":["当前有更高的版本，是否进行升级"],//弹框内容
+        "button":[{
+            "text":"取消",
+            "background-color":"not",
+            "type":"delete"
+        },{
+            "text":'立即升级',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"update"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
+var data5 = {
+ "type":"1",
+ "option":{
+        "width":"width:378px",
+        "title":"检查更新",//title名
+        "text":["当前已经是最新版本，无需再更新"],//弹框内容
+        "button":[{
+            "text":'确定',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"install"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
+var data6 = {
+ "type":"2",
+ "option":{
+   "isProgress":true,
+   "data":{
+     "title":'检查更新',
+     "text":['正在下载新版本...'],
+     "progress":{
+       "color":"background:#fa9a6b"
+     },
+     "button":[{
+             "text":"取消",
+                "background-color":"not",//按钮颜色
+             "type":"delete"
+         }]
+   }
+ }
+}
+var data7 = {
+ "type":"2",
+ "option":{
+   "isProgress":true,
+   "data":{
+     "title":'检查更新',
+     "text":['下载成功，请点击“立即安装”'],
+     "progress":{
+       "color":"background:#FAA175"
+     },
+     "button":[{
+             "text":"立即安装",
+                "background-color":"ok",//按钮颜色
+             "type":"install"
+         }]
+   }
+ }
+}
+var data8 = {
+ "type":"2",
+ "option":{
+   "isProgress":true,
+   "data":{
+     "title":'检查更新',
+     "text":['下载失败，请稍候再重试'],
+     "progress":{
+       "color":"background:#ff3333"
+     },
+     "button":[{
+             "text":"取消",
+             "background-color":"not",
+             "type":"delete"
+         },{
+             "text":'重试',//按钮名称
+             "background-color":"ok",//按钮颜色
+             "type":"retry"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+         }]
+   }
+ }
+}
+var data9 = {
+    "type":"1",//弹框类型（"1" 普通弹框， "2" 进度条弹框，"3" 支付弹框 , "4"密码弹框）
+    "option":{
+        "title":"提示",//title名
+        "text":["抱歉，您还不是会员，无法转换超","过5页的PDF文件，请开通会员后","再试"],//弹框内容
+        "button":[{
+            "text":'只转5页',//按钮名称
+            "background-color":"not",//按钮颜色
+            "type":"fivePage"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        },{
+            "text":'升级会员',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"payment"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
+var data10 = {
+  "type":"1",
+  "option":{
+        "width":"width:378px",
+        "title":"检查更新",//title名
+        "text":["当前有转换任务进行中，继续安装","将会中止任务并退出程序"],//弹框内容
+        "button":[{
+            "text":"取消",
+            "background-color":"not",
+            "type":"delete"
+        },{
+            "text":'继续安装',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"update"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
+var data11 = {
+    "type":"1",//弹框类型（"1" 普通弹框， "2" 进度条弹框，"3" 支付弹框 , "4"密码弹框）
+    "option":{
+        "title":"提示",//title名
+        "text":["您是否支付成功？"],//弹框内容
+        "button":[{
+            "text":'支付成功',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"found"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
+var data12 = {
+ "type":"4",
+ "option":{
+   "title":'输入密码',
+   "text":"密码123.pdf",
+   "button":[{
+         "text":"取消",
+         "background-color":"not",//按钮颜色
+         "type":"delete"
+       },{
+         "text":"确定",
+        "background-color":"ok",//按钮颜色
+         "type":"password"
+        }]
+ }
+}
+
+  $('.test').on('click',function(e){
+    var isOk = $(e.target).attr('data-type');
+    if(isOk === 'data'){
+      _data = Base64.encode(JSON.stringify(data))
+    } else if(isOk === 'data1'){
+      _data = Base64.encode(JSON.stringify(data1))
+    } else if(isOk === 'data2'){
+      _data = Base64.encode(JSON.stringify(data2))
+    } else if(isOk === 'data3'){
+      _data = Base64.encode(JSON.stringify(data3))
+    } else if(isOk === 'data4'){
+      _data = Base64.encode(JSON.stringify(data4))
+    } else if(isOk === 'data5'){
+      _data = Base64.encode(JSON.stringify(data5))
+    } else if(isOk === 'data6'){
+      _data = Base64.encode(JSON.stringify(data6))
+    } else if(isOk === 'data7'){
+      _data = Base64.encode(JSON.stringify(data7))
+    } else if(isOk === 'data8'){
+      _data = Base64.encode(JSON.stringify(data8))
+    }else if(isOk === 'data9'){
+      _data = Base64.encode(JSON.stringify(data9))
+    }else if(isOk === 'data10'){
+      _data = Base64.encode(JSON.stringify(data10))
+    }else if(isOk === 'data11'){
+      _data = Base64.encode(JSON.stringify(data11))
+    }else if(isOk === 'data12'){
+      _data = Base64.encode(JSON.stringify(data12))
+    }
+    window.open("http://localhost:3000/dist/html/layer.html?json="+_data)
+
+  })
+  
+</script>
+</html>

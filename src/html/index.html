@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset = "utf-8">
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit">
+<title>PDF转WORD</title>
+<!-- build:css ../css/index.css -->
+  <link rel="stylesheet" type="text/css" href="../css/globals.css">
+  <link rel="stylesheet" type="text/css" href="../css/index.css">
+  <link rel="stylesheet" type="text/css" href="../css/sprite.css">
+<!-- endbuild -->
+
+</head>
+<!--[if lt IE 9]>
+<script src="../js/html5.js"></script>
+<script src="../js/json.js"></script>
+<style type="text/css">
+  #progress1 {
+    margin: 0px 0 0 12px;
+  }
+</style>
+<![endif]-->
+<body scroll="no" onselectstart="return false;">
+
+ 
+
+  <!-- 头部 -->
+
+  <header class="icon-u888">
+    <h1 class="header-left">
+      福昕PDF转Word 
+    </h1>
+    <div class="header-right">
+      <ul> 
+        <li class="header-land">
+          <div class="no-land">
+            <i class="header-icon-land icon-u19"></i>
+            未登录
+          </div>
+        </li>
+        <li class="service">
+          <a href="http://pdf2word.foxitreader.cn" target="_blank" ondragstart="return false">
+            <i class="header-icon-land icon-u12"></i>
+            客服
+          </a>
+        </li>
+        <li class="miniDown">
+          <i class="icon-u5"></i>
+        </li>
+        <li class="minimize"> 
+          <i class="icon-u7"></i>
+        </li>
+        <li class="delete">
+          <i class="icon-u9"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="header-file"> 
+      <ul>
+        <li class="files">
+          <i class="header-icon-land icon-u613"></i>
+          <div class="file file-r">
+            添加文件
+          </div>
+          <input id="fileupload" hideFocus="true" type="file" name="uploadFile" multiple=""  accept=".pdf">
+          <div class="file-maks none">
+            
+          </div>
+        </li>
+        <li>
+          <a href="http://pdftoword.foxitreader.cn/" target="_blank" ondragstart="return false">
+            <i class="header-icon-land icon-u601"></i>
+            <div class="file">
+              在线转换
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="land">
+      
+    </div>
+  </header>
+
+  <!-- 个人信息下拉框 -->
+  <div id="drops" class="none">
+    <ul>
+      <li class="personal">
+        <i class="icon-u701"></i>
+        <p>个人中心</p>
+      </li>
+      <li class="drops-update">
+        <i class="icon-u703"></i>
+        <p>升级会员</p>
+      </li>
+      <li class="drops-logout">
+        <i class="icon-u698"></i>
+        <p>注销用户</p>
+      </li>
+    </ul>
+  </div>
+  <!-- 下拉框 -->
+  <div id="drop" class="none">
+    <ul>
+      <li class="shortcut">
+        <i class="icon-u574"></i>
+        <p>
+          设置桌面快捷方式
+        </p>
+      </li>
+      <li class="update">
+        <i class="icon-u572"></i>
+        <p>
+          检查更新
+        </p>
+      </li>
+      <li class="aboutUs">
+        <i class="icon-u576"></i>
+        <p>
+          关于我们
+        </p>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 内容 -->
+
+  <section>
+    <div id="table">
+      <div class="top-table">
+        <table>
+          <thead>
+            <tr class="thead-tr">
+              <th class="table-k1">
+                <div class="top-checkbox icon-u772 icon-u758 public" data-checkbox='1'></div>
+                <em>全选</em>
+                <span class="foot-delete foot-delete-r public">删除</span>
+                <i></i>
+                <p>文件名</p>
+              </th>
+              <th class="table-k2">
+                大小
+                <i></i>
+              </th>
+              <th class="table-k3">
+                总页数
+                <i></i>
+              </th>
+              <th class="table-k4">
+                转换页数范围
+                <i></i>
+              </th>
+              <th class="table-k5">
+                状态
+                <i></i>
+              </th>
+              <th class="table-k6">
+                操作
+              </th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+      <div class="fol-table viewport">
+        <div class="overview">
+          <table>
+            <thead>
+              <tr class="thead-tr">
+                <th class="table-k1"></th>
+                <th class="table-k2"></th>
+                <th class="table-k3"></th>
+                <th class="table-k4"></th>
+                <th class="table-k5"></th>
+                <th class="table-k6"></th>
+              </tr>
+            </thead>
+            <tbody class="tbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- 拖拽窗口 -->
+      <div id="drag" class="icon-u999">
+        <div class="drag-centre" id="drags">
+          单击按钮选择文件进行转换
+          <div class="file-add">
+            <i class="icon-u614"></i>
+            <input id="fileuploads" hideFocus="true" type="file" name="uploadFile" multiple=""  accept=".pdf">
+          </div>
+        </div>
+        <div class="foot">
+          <ul>
+            <li class="foot-r">
+              <a href="http://pdftoword.foxitreader.cn/" target="_blank" ondragstart="return false"><i class="icon-u42"></i>在线转换</a>
+            </li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="foot">
+      <div class="top-block-k">
+        <div class="foot-laber laber-r">
+          转换格式：
+        </div>
+        <div class="foot-drop drop-r public">
+          <p class="foot-drop-html" data-html="0" data-int="1">.DOCX</p>
+          <i class="foot-drop-i drop-i icon-u106 " data-html="0"></i>
+        </div>
+        <div class="foot-drop-k none drop-k" data-int="0">
+          .RTF
+        </div>
+      </div>
+      <div class="top-block">
+        <div class="top-laber laber-r">
+          保存路径：
+        </div>
+        <div class="top-drop drop-r public" >
+          <p class="top-drop-html" data-html="0">和PDF相同路径</p>
+          <i class="top-drop-i drop-i icon-u106" data-html="0"></i>
+        </div>
+        <div class="top-drop-k none drop-k" data-path="1"  data-hover="1">
+          自定义路径
+        </div>
+        <div class="drop-path none">
+          
+        </div>
+      </div>
+      <div class="path">
+        <p></p>
+      </div>
+      <div id="start" class="button public isOk" data-path="PDFPATH" data-int="1">
+        开始转换
+      </div>
+      <div class="button-maks none">
+        
+      </div>
+    </div>
+    <div class="section-maks none">
+      
+    </div>
+  </section>
+</body>
+<!-- 文件列表 -->
+<!-- data-fileSize "文件大小" data-filePath "文件路径" data-name "文件名" data-password "文件密码" data-pages "文件页数" -->
+<script id="template" type="text/x-handlebars-template">
+  {{#each this}} 
+    <tr class="tr" data-bool="1" data-fileSize="{{this.sendSize}}" data-filePath="{{this.filePath}}" data-name="{{this.name}}" data-password="{{this.filePassword}}" data-pages="{{this.filePages}}" data-isOk='0' data-path="">
+      <td>
+        <div class="checkbox icon-u772 icon-u758 tr-public" data-checkbox='1' data-success="true"></div>
+        <div class="fileName" title="{{this.fileName}}">{{this.fileName}}</div>
+      </td>
+      <td class="fileSize">
+        {{this.fileSize}}
+      </td>
+      <td>
+        {{this.pages}}
+      </td>
+      <td>
+        <div class="range range-on tr-public" data-open="0" data-success="true" data-filePath="{{this.fullPath}}">
+        所有页面
+        <i class="row icon-u106"></i>
+        </div>
+        <div class="all-drop none">
+          <ul>
+            <li class="all none" data-pages="{{this.filePages}}"></li>
+            <li class="other" data-path="{{this.filePath}}" data-filePath="{{this.fullPath}}" data-name="{{this.fileName}}" data-password="{{this.filePassword}}">...</li>
+          </ul>
+        </div>
+      </td>
+      <td class="open" data-filePath="{{this.fullPath}}">
+        <span>
+          <div class="am-progress am-progress-sm am-active" id="progress1">
+            <div class="am-progress-bar" id="pro" style="background: #4bd167;"></div>
+          </div>
+          <div class="success none">
+            <i class="icon-u155"></i> 
+            转换成功
+          </div>
+          <div class="err none">
+            <i class="icon-u152"></i>
+            转换失败
+          </div>
+        </span>  
+      </td>
+      <td class="tr-delete">
+        <span title="删除" class="icon-u152 tr-delete-r tr-public" data-success="true" data-filePath="{{this.fullPath}}" data-success="true"></span>
+        <div title="打开文件" data-success="false" class="open-text icon-u166 none tr-public"></div>
+        <div title="打开所在的文件夹" class="open-text icon-u164 none"></div>
+      </td>
+    </tr>
+  {{/each}}
+</script>
+<!-- 登录 -->
+<script id="land" type="text/x-handlebars-template">
+  <i class="icon-u677"></i>
+  <img id="img" src="{{this.headIcon}}">
+  <p>{{this.nickName}}</p>
+</script>
+<script src="../js/jquery.js"></script>
+<script src="../js/handlebars-1c9a1eb5db.js"></script>
+<script src="../js/b64.js"></script>
+<script src="../js/drag.js"></script>
+<!-- build:js ../js/index.js -->
+<script src="../js/jquery.tinyscrollbar.min.js"></script>
+<script src="../js/index.js"></script>
+<!-- endbuild -->
+</html>

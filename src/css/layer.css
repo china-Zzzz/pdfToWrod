@@ -1,0 +1,384 @@
+.none {
+	display: none;
+}
+#ordinary {
+	width: 308px;
+	height: 196px;
+	border: 1px solid #ccc;
+	position: absolute;
+}
+#prog,#pass {
+	width: 380px;
+	height: 198px;
+	border: 1px solid #ccc;
+	position: absolute;
+}
+#pay {
+	width: 398px;
+	height: 258px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+#pay section {
+	height: 197px;
+	overflow: hidden;
+}
+#pay .section-p1 label {
+	float: left;
+	font-size: 13px;
+	line-height: 30px;
+	margin-right: 10px;
+	margin-left: 82px;
+	color: #5E5E5E;
+}
+#pay .section-p1 {
+	float: left;
+	width: 100%;
+	margin-bottom: 10px;
+}
+#pay .section-p1 .time {
+	position: relative;
+	width: 70px;
+	height: 26px;
+	border: 1px solid #f6545a;
+	line-height: 26px;
+	text-align: center;
+	margin-right: 5px;
+	float: left;
+	font-weight: 700;
+    font-style: normal;
+    color: #F6545A;
+    font-size: 13px;
+}
+#pay .section-p1 .time i {
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+#pay .section-p1 .money {
+	font-weight: 700;
+	color: #F6545A;
+	font-size: 13px;
+	float: left;
+    margin-top: 6px;
+}
+#pay .footer-button .fivePage {
+	padding: 2px 13px;
+    border: 1px solid #F98953;
+}
+#pages {
+	width: 308px;
+	height: 196px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+#pages .left {
+	color: #5E5E5E;
+	font-size: 13px;
+	margin: 42px 20px 0 20px;
+	float: left;
+}
+#pages .right {
+	float: left;
+	margin: 38px 0 0 0;
+}
+#pages .right input {
+	width: 56px;
+	height: 28px;
+	line-height: 28px;
+	float: left;
+	text-indent: 5px;
+	text-align: center;
+	color: #5E5E5E;
+	font-size: 13px;
+}
+#pages section {
+	height: 110px;
+	overflow: hidden;
+}
+#pages .right .icon {
+	float: left;
+	margin: 6px 10px;
+}
+header {
+	width: 100%;
+	height: 28px;
+	line-height: 28px;
+	background: #f98953;
+}
+header .delete{
+	cursor: pointer;
+	float: right;
+	margin: 5px 10px 0 0;
+}
+header .title {
+	float: left;
+	color: #fff;
+	font-size: 14px;
+	margin-left: 8px;
+	font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+}
+#ordinary section {
+	overflow: hidden;
+}
+#ordinary section .top {
+	display: inline-block;
+	position: absolute;
+	margin-top: 30px;
+	height: 60px;
+}
+#prog section, #pass section {
+	height: 170px;
+	overflow: hidden;
+}
+#pay section .left {
+    height: 92px;
+	width: 20%;
+	float: left;
+}
+#pay section .right {
+	float: left;
+    width: 80%;
+    height: 92px;
+    position: relative;
+}
+section .top .section-p {
+	float: left;
+	margin-left: 15px;
+	display: inline-block;
+}
+#ordinary section .top i{
+	display: block;
+	float: left;
+	margin-top: 4px;
+}
+#pay section .left i {
+	display: block;
+	margin: 32px 20px 0 33px; 
+	float: left;
+}
+#ordinary .install {
+	padding: 2px 34px;
+}
+section p {
+	margin-bottom: 3px;
+    font-size: 13px;
+    color: #5E5E5E;
+    height: 18px;
+}
+section .progress-p {
+	width: 320px;
+	margin: 34px auto 0;
+    overflow: hidden;
+}
+section .progress-p p {
+	color: #5E5E5E;
+	font-size: 13px;
+	margin-bottom: 10px;
+}
+section .download-top {
+	width: 320px;
+	margin: 24px auto 0;
+	font-size: 13px;
+}
+section h3 {
+	margin: 0 0 0 30px;
+	font-size: 13px;
+}
+section .download-p {
+	width: 320px;
+	margin: 0 auto;
+	height: 110px;
+}
+section .download-p p {
+	float: left;
+}
+section .download-p p i {
+	margin-top: 2px;
+	display: block;
+	float: left;
+}
+section .download-p p em{
+	width: 320px;
+	margin: 0 auto;
+}
+#progress1 {
+	width: 320px;
+	height: 10px;
+	border-radius: 10px;
+	margin: 0 auto;
+}
+.password-name {
+	width: 320px;
+	margin: 10px auto 10px;
+	font-size: 13px;	
+}
+.password-input {
+	width: 320px;
+	margin: 0 auto;
+	font-size: 13px;
+    line-height: 29px;
+}
+.password-input input {
+	width: 178px;
+	padding: 6px 0;
+	border: 1px solid #c5d5e4;
+	padding-left: 10px;
+}
+.password-input label {
+	float: left;
+	margin-right: 10px;
+	color: #5E5E5E;
+}
+#ordinary footer {
+	bottom: 27px;
+}
+footer {
+	height: 31px;
+	position: absolute;
+	bottom: 33px;
+	left: 50%;
+	*left: 26%;
+}
+#pay footer {
+	bottom: 20px;
+}
+footer .button {
+	height: 24px;
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	line-height: 24px;
+	float: right;
+	cursor: pointer;
+	border-radius: 3px;
+	margin-left: 9px;
+}
+footer .button:hover{
+	background: #fa9a6b;
+	color: #fff;
+}
+footer .button:active{
+	background: #f9834a;
+	color: #fff;
+}
+footer .not {
+	background: #fff;
+	color: #F98953;
+}
+footer .ok {
+	background: #F98953;
+	color: #fff;
+}
+footer .footer-button {
+	margin: 0 auto;
+	overflow: hidden;
+}
+footer .buttonHover {
+	background: #4297d7;
+}
+#pass footer .delete{
+	padding: 3px 20px;
+}
+#pass .password-p {
+	width: 320px;
+	margin: 23px auto 20px;
+	font-size: 13px;
+	color: #ff0000;
+}
+#pass footer {
+	bottom: 20px;
+}
+footer .delete,
+footer .update, 
+footer .payment, 
+footer .install, 
+footer .found,
+footer .retry,
+footer .pages, 
+footer .fivePage, 
+footer .password,
+footer .land{
+	padding: 2px 22px;
+	border: 1px solid #F98953;
+}
+footer .member, footer .download{
+	padding: 3px 10px;
+}
+footer .fivePage{
+	padding: 3px 12px;
+}
+footer .payment {
+	padding: 3px 10px;
+}
+footer .update {
+	padding: 2px 10px;
+}
+footer .payments {
+	padding: 2px 10px;
+}
+footer .password {
+	padding: 3px 20px;
+}
+#pay footer .qq {
+	float: left;
+	font-size: 13px;
+	text-decoration: underline;
+	margin: 8px 0 0 20px;
+}
+#pay footer .qq a {
+	color: #3488c6;
+}
+#pages footer {
+	position: absolute;
+}
+#pages footer .delete, #pages footer .pages {
+	padding: 3px 20px;
+}
+#pages .maks {
+	width: 66px;
+	height: 32px;
+	position: absolute;
+	right: 75px;
+	*right: 156px;
+    top: 0px;
+    background: #ccc;
+    opacity: 0.1;
+    filter: alpha(opacity=10);
+}
+/* 进度条 */
+.am-progress.am-active .am-progress-bar {
+    -webkit-animation: progress-bar-stripes 2s linear infinite;
+    animation: progress-bar-stripes 2s linear infinite;
+    width: 10%;
+}
+.am-progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: #fff;
+    text-align: center;
+    background-color: #f98953;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    transition: width .6s ease;
+}
+.am-progress {
+    overflow: hidden;
+    height: 2rem;
+    margin-bottom: 2rem;
+    background-color: #f5f5f5;
+    border-radius: 0;
+    -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+    box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+}
+.am-progress-sm {
+    height: 14px;
+    height: 1.2rem;
+}
