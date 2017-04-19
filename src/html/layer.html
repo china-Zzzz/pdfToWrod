@@ -61,9 +61,15 @@
           <p>{{this}}</p>
         {{/each}}
       </div>
+      {{# if this.isScroll}}
       <div class="am-progress am-progress-sm am-active " id="progress1">
         <div class="am-progress-bar" id="pro" style="{{this.data.progress.color}}; {{this.data.width}}"></div>
       </div>
+      {{else}}
+      <div class="am-progress am-progress-sm am-active " id="progress1">
+        <div class="am-progress-b" id="pro" style="{{this.data.progress.color}}; {{this.data.width}}"></div>
+      </div>
+      {{/if}}
       {{else}}
         <div class="download-top">
           {{this.data.text}}

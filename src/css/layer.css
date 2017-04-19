@@ -356,6 +356,16 @@ footer .password {
     -webkit-transition: width .6s ease;
     transition: width .6s ease;
 }
+.am-progress-b {
+	float: left;
+    width: 0;
+    height: 100%;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    color: #fff;
+    text-align: center;
+    background-color: #f98953;
+}
 .am-progress {
     overflow: hidden;
     height: 2rem;

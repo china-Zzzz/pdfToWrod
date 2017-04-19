@@ -198,6 +198,7 @@ function SetProgress(num){
 			"type":"2",
 			"option":{
 			    "isProgress":true,
+   				"isScroll":false,
 			    "data":{
 			    	"title":'检查更新',
 			     	"text":['下载成功，请点击“立即安装”'],
