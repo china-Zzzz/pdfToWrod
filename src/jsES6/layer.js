@@ -24,7 +24,7 @@ function setParam(data){
 
 	} else {
 
-		_pagesTem(_data.option);
+		_pagesTem(_data.option)
 
 	}
 
