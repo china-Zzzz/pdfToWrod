@@ -1102,8 +1102,10 @@ function _event() {
 
 		var path = $(e.target).attr('data-filePath');
 
+		var option = _path + "," + _pass;
+
 		try {
-			var pages = window.external.ChangeConvertPage(_path, _pass);
+			var pages = window.external.ChangeConvertPage(_path);
 			//转换页数弹框点击取消按钮不改变输入框值
 			if (pages !== '') {
 

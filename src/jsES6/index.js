@@ -1331,11 +1331,13 @@ function _event(){
 
 		let _pass = $(e.target).attr('data-password');
 
-		let path = $(e.target).attr('data-filePath')
+		let path = $(e.target).attr('data-filePath');
+
+		let option = `${_path},${_pass}`;
 
 		try
 		{
-		   let pages = window.external.ChangeConvertPage(_path, _pass);
+		   let pages = window.external.ChangeConvertPage(_path);
 		   //转换页数弹框点击取消按钮不改变输入框值
 		   if(pages !== ''){
 
