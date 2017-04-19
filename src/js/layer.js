@@ -190,7 +190,7 @@ function SetProgress(num) {
 					"button": [{
 						"text": "立即安装",
 						"background-color": "ok", //按钮颜色
-						"type": "install"
+						"type": "update"
 					}]
 				}
 			}
@@ -297,7 +297,7 @@ function _event() {
 			window.external.DeskTopIcon();
 		} catch (err) {}
 	});
-	//立即安装\下载更新\立即更新
+	//立即安装\下载更新\立即更新\重试
 	$('.update').on('mousedown', function (e) {
 
 		try {

@@ -13,6 +13,7 @@ body {
 #prog,#pass {
 	border: 1px solid #ccc;
 	position: absolute;
+	width: 100%;
 }
 #pay {
 	border: 1px solid #ccc;
@@ -65,6 +66,7 @@ body {
 #pages {
 	border: 1px solid #ccc;
 	position: relative;
+	width: 100%;
 }
 #pages .left {
 	color: #5E5E5E;
@@ -85,10 +87,6 @@ body {
 	text-align: center;
 	color: #5E5E5E;
 	font-size: 13px;
-}
-#pages section {
-	height: 110px;
-	overflow: hidden;
 }
 #pages .right .icon {
 	float: left;
@@ -343,7 +341,6 @@ footer .password {
 .am-progress.am-active .am-progress-bar {
     -webkit-animation: progress-bar-stripes 2s linear infinite;
     animation: progress-bar-stripes 2s linear infinite;
-    width: 10%;
 }
 .am-progress-bar {
     float: left;
