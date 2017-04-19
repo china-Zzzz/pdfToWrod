@@ -207,7 +207,7 @@ function SetProgress(num){
 			    "button":[{
 			        "text":"立即安装",
 			        "background-color":"ok",//按钮颜色
-			        "type":"install"
+			        "type":"update"
 			        }]
 			    }
 			 }

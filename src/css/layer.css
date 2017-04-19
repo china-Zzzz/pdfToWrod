@@ -18,10 +18,6 @@ body {
 	border: 1px solid #ccc;
 	position: relative;
 }
-#pay section {
-	height: 197px;
-	overflow: hidden;
-}
 #pay .section-p1 label {
 	float: left;
 	font-size: 13px;
@@ -119,7 +115,7 @@ header .title {
     font-size: 13px;
 }
 section {
-	height: 165px;
+	height: 172px;
 	overflow: hidden;
 }
 #ordinary section .top {
@@ -127,10 +123,6 @@ section {
 	position: absolute;
 	margin-top: 30px;
 	height: 60px;
-}
-#prog section, #pass section {
-	height: 170px;
-	overflow: hidden;
 }
 #pay section .left {
     height: 92px;

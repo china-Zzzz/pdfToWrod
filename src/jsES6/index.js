@@ -554,10 +554,6 @@ function _changeCss(path, $state){
  */
  function ChangeSuccess(path){
 
- 	// let type = $('#foot').find('.drop-r p').attr('data-name');
-
- 	// _name = _name.replace(type,'pdf');
- 	// 
  	_changeCss(path, '.success')
 
  }
@@ -790,32 +786,6 @@ function _startCss(obj, i){
 	$('.top-checkbox').addClass('checkbox-on');
 
 }
-// /**
-//  * 文件格式、文件路径
-//  */
-// function _fileFormatPath(e){
-
-// 	let _int = $(e.target).attr('data-int');
-
-// 	let _intP = $('.foot-drop p').attr('data-int');
-
-// 	let _name = $(e.target).attr('data-name');
-
-// 	let _nameS = $('.foot-drop p').attr('data-name');
-// 	//转换格式
-// 	if(_int){
-
-// 		$('.foot-drop p').attr('data-int',_int);
-
-// 		$(e.target).attr('data-int',_intP)
-
-// 		$('.foot-drop p').attr('data-name',_name);
-
-// 		$(e.target).attr('data-name',_nameS);
-
-// 	}
-
-// }
 /**
  * 删除文件
  * @param  {[object]} file 
@@ -945,12 +915,6 @@ function _event(){
 	//转换格式mousedown
 	$('.foot-drop-k').on('mousedown', (e) =>{
 
-		//let path = $(e.target).attr('data-path');
-
-		//let _path = $('.top-drop').attr('data-path');
-
-		//let tem = $(e.target).attr('data-html');
-
 		let html = $(e.target).html();
 
 		let _html = $('.foot-drop-html').html();
@@ -958,9 +922,6 @@ function _event(){
 		let Int = $(e.target).attr('data-int');
 
 		let _Int = $('.foot-drop-html').attr('data-int');
-		
-		// $(e.target).addClass('none')
-		// 		   .attr('data-path',_path)
 
 		$(e.target).html(_html);
 
@@ -973,20 +934,6 @@ function _event(){
 		$('#start').attr('data-int',Int);
 
 		$(e.target).addClass('none');
-
-
-		// $(`.drop-path[data-path=${path}]`).removeClass('none');
-		// //选择后文字变化
-		// $(`.top-drop-html[data-html=${tem}]`).html(html);
-
-		// $(`.drop-k[data-html=${tem}]`).html(_html);
-
-		// $('.top-drop').attr('data-path',path);
-
-		// $('.top-drop-k').attr('data-hover',path);
-
-		//_fileFormatPath(e);
-
 
 	})
 	//转换格式\保存路径下拉框hover
@@ -1446,51 +1393,6 @@ function _event(){
 		}
 
 	})
-
-	// //dragover 拖动到指定框中触发的事件
- //    addEvent($('#drags'), 'dragover', function (e) {
-
- //        if (e.preventDefault) {
-
- //            e.preventDefault(); 
-
- //            $('.section-fol').addClass('none');
-
- //            $('.section-fol-k2').removeClass('none');
-
- //            e.dataTransfer.dropEffect = 'copy';
-            
- //            return false;
- //        }
- //    });
- //    //drop 拖动到指定框中释放触发的事件
- //    addEvent($('#drags'), 'drop', function (e) {
- //    	handleFileSelect(e)
-
- //        if (e.stopPropagation){
-
- //            e.stopPropagation(); 
-
-            
-
- //            return false;
- //        }
-
- //    });
-
- //    addEvent($('#drags'), 'dragleave', function (e) {
-
-
- //        if (e.stopPropagation){
-
- //            e.stopPropagation(); 
-
-            
-
- //        }
-
- //    });
-
 
 }
 
