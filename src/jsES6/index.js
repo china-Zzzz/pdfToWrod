@@ -537,7 +537,7 @@ function _changeCss(path, $state){
     					   .removeClass('none')
     					   .attr('data-int',_int)
     .end()
-    	.find('.open-folde').attr('data-success','true')
+    	.find('.open-folder').attr('data-success','true')
     					   .removeClass('none')
     .end()
     	.find('.tr-delete-r').removeClass('none')
