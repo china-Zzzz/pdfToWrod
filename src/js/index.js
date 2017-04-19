@@ -454,13 +454,13 @@ function _changeCss(path, $state) {
 
 	var _trPublic = _tr.find('.tr-public');
 
-	var _int = $('#state').attr('data-int');
+	var _int = $('#start').attr('data-int');
 	//转换成功/转换失败后可删除
 	_tr.find('.tr-delete-r').attr('data-success', 'true');
 	//转换成功/转换失败后可选择
 	_tr.find('.checkbox').attr('data-success', 'true');
 
-	_tr.find('.am-progress').addClass('none').end().find('.am-progress-bar').css('width', 0).end().find($state).removeClass('none').end().find('.open-text').attr('data-success', 'true').removeClass('none').attr('data-int', _int).end().find('.tr-delete-r').removeClass('none').end().find('.range').addClass('range-on').find('.checkbox').removeClass('checkbox-on').find('.range').removeClass('Not-allowed').end();
+	_tr.find('.am-progress').addClass('none').end().find('.am-progress-bar').css('width', 0).end().find($state).removeClass('none').end().find('.open-text').attr('data-success', 'true').removeClass('none').attr('data-int', _int).end().find('.open-folde').attr('data-success', 'true').removeClass('none').end().find('.tr-delete-r').removeClass('none').end().find('.range').addClass('range-on').find('.checkbox').removeClass('checkbox-on').find('.range').removeClass('Not-allowed').end();
 
 	_tr.attr('data-isOk', '0').attr('data-path', path);
 
@@ -1103,7 +1103,7 @@ function _event() {
 		var path = $(e.target).attr('data-filePath');
 
 		try {
-			var pages = window.external.ChangeConvertPage(path, _pass);
+			var pages = window.external.ChangeConvertPage(_path, _pass);
 			//转换页数弹框点击取消按钮不改变输入框值
 			if (pages !== '') {
 
