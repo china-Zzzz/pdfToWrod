@@ -51,7 +51,7 @@ function handleFileSelect(evt) {
 		fileName = _path.split('\\')[length - 1];
 
 		name = fileName;
-		//根据客户端要求传输的路径为不加图片名称的路径
+		//根据客户端要求传输的路径为不加文件名称的路径
 		path = evt.target.value.split(name)[0];
 		//文件类型
 		_type = fileName.split('.')[fileName.split('.').length - 1];
@@ -116,7 +116,7 @@ function handleFileSelect(evt) {
 			//文件名
 			name = f.name;
 			if (fileOK) {
-				//根据客户端要求传输的路径为不加图片名称的路径
+				//根据客户端要求传输的路径为不加文件名称的路径
 				path = evt.target.value.split(name)[0];
 
 				fileOK = false;
@@ -453,12 +453,14 @@ function _changeCss(path, $state) {
 	var _tr = $(".tr[data-name=" + _name + "]");
 
 	var _trPublic = _tr.find('.tr-public');
+
+	var _int = $('#state').attr('data-int');
 	//转换成功/转换失败后可删除
 	_tr.find('.tr-delete-r').attr('data-success', 'true');
 	//转换成功/转换失败后可选择
 	_tr.find('.checkbox').attr('data-success', 'true');
 
-	_tr.find('.am-progress').addClass('none').end().find('.am-progress-bar').css('width', 0).end().find($state).removeClass('none').end().find('.open-text').attr('data-success', 'true').removeClass('none').end().find('.tr-delete-r').removeClass('none').end().find('.range').addClass('range-on').find('.checkbox').removeClass('checkbox-on').find('.range').removeClass('Not-allowed').end();
+	_tr.find('.am-progress').addClass('none').end().find('.am-progress-bar').css('width', 0).end().find($state).removeClass('none').end().find('.open-text').attr('data-success', 'true').removeClass('none').attr('data-int', _int).end().find('.tr-delete-r').removeClass('none').end().find('.range').addClass('range-on').find('.checkbox').removeClass('checkbox-on').find('.range').removeClass('Not-allowed').end();
 
 	_tr.attr('data-isOk', '0').attr('data-path', path);
 
@@ -466,7 +468,7 @@ function _changeCss(path, $state) {
 }
 /**
  * 文件转换成功接口
- * @param  {[string]} opiton 客户端传入文件转换成功路径
+ * @param  {[string]} opiton 客户端传入文件转换成功路径（后缀为.pdf）
  */
 function ChangeSuccess(path) {
 
@@ -474,7 +476,7 @@ function ChangeSuccess(path) {
 }
 /**
 * 文件转换失败接口
-* @param  {[string]} opiton 客户端传入文件转换失败路径
+* @param  {[string]} opiton 客户端传入文件转换失败路径（后缀为.pdf）
 */
 function ChangeFail(path) {
 
@@ -980,15 +982,40 @@ function _event() {
 	});
 	//打开文件调用客户端文件
 	$('.open-text').on('mousedown', function (e) {
-		//获取文件路径
+		//获取文件路径（pdf后缀）
 		var path = $(e.target).parents('tr').attr('data-path');
+
+		var success = $(e.target).attr('data-success');
+
+		var _int = $(e.target).attr('data-int');
+
+		//文件格式转换（转换为转换后的后缀）
+		if (_int === '0') {
+
+			path = path.replace('.pdf', '.rtf');
+		} else {
+
+			path = path.replace('.pdf', '.docx');
+		}
+
+		if (success === 'true') {
+
+			try {
+				window.external.OpenFile(path);
+			} catch (err) {}
+		}
+	});
+	//打开文件夹调用客户端文件夹
+	$('.open-folder').on('mousedown', function (e) {
+		//获取文件路径（pdf后缀）
+		var path = $(e.target).parents('tr').attr('data-filePath');
 
 		var success = $(e.target).attr('data-success');
 
 		if (success === 'true') {
 
 			try {
-				window.external.OpenFile(path);
+				window.external.OpenFileDir(path);
 			} catch (err) {}
 		}
 	});
@@ -1075,10 +1102,8 @@ function _event() {
 
 		var path = $(e.target).attr('data-filePath');
 
-		var option = _path + "," + _pass;
-
 		try {
-			var pages = window.external.ChangeConvertPage(option);
+			var pages = window.external.ChangeConvertPage(path, _pass);
 			//转换页数弹框点击取消按钮不改变输入框值
 			if (pages !== '') {
 

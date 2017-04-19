@@ -305,6 +305,9 @@ footer .payment {
 footer .update {
 	padding: 2px 10px;
 }
+#prog footer .update {
+	padding: 2px 22px;
+}
 footer .payments {
 	padding: 2px 10px;
 }

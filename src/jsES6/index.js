@@ -49,7 +49,7 @@ function handleFileSelect(evt) {
 		fileName = _path.split('\\')[length-1];
 
 		name = fileName;
-		//根据客户端要求传输的路径为不加图片名称的路径
+		//根据客户端要求传输的路径为不加文件名称的路径
 		path = evt.target.value.split(name)[0];
 		//文件类型
 		_type = (fileName.split('.'))[fileName.split('.').length - 1];
@@ -127,7 +127,7 @@ function handleFileSelect(evt) {
 			//文件名
 			name = f.name;
 			if(fileOK){
-				//根据客户端要求传输的路径为不加图片名称的路径
+				//根据客户端要求传输的路径为不加文件名称的路径
 				path = evt.target.value.split(name)[0];
 
 				fileOK = false;
@@ -519,6 +519,8 @@ function _changeCss(path, $state){
     let _tr = $(`.tr[data-name=${_name}]`);
 
  	let _trPublic = _tr.find('.tr-public');
+
+ 	let _int = $('#state').attr('data-int');
  	//转换成功/转换失败后可删除
  	_tr.find('.tr-delete-r').attr('data-success','true');
  	//转换成功/转换失败后可选择
@@ -533,6 +535,7 @@ function _changeCss(path, $state){
     .end()
     	.find('.open-text').attr('data-success','true')
     					   .removeClass('none')
+    					   .attr('data-int',_int)
     .end()
     	.find('.tr-delete-r').removeClass('none')
     .end()
@@ -550,7 +553,7 @@ function _changeCss(path, $state){
 }
 /**
  * 文件转换成功接口
- * @param  {[string]} opiton 客户端传入文件转换成功路径
+ * @param  {[string]} opiton 客户端传入文件转换成功路径（后缀为.pdf）
  */
  function ChangeSuccess(path){
 
@@ -559,7 +562,7 @@ function _changeCss(path, $state){
  }
  /**
  * 文件转换失败接口
- * @param  {[string]} opiton 客户端传入文件转换失败路径
+ * @param  {[string]} opiton 客户端传入文件转换失败路径（后缀为.pdf）
  */
  function ChangeFail(path){
 
@@ -1157,8 +1160,42 @@ function _event(){
 	})
 	//打开文件调用客户端文件
 	$('.open-text').on('mousedown', (e) =>{
-		//获取文件路径
+		//获取文件路径（pdf后缀）
 		let path = $(e.target).parents('tr').attr('data-path');
+
+		let success = $(e.target).attr('data-success');
+
+		let _int = $(e.target).attr('data-int');
+
+		//文件格式转换（转换为转换后的后缀）
+		if(_int === '0'){
+
+			path = path.replace('.pdf','.rtf');
+
+		} else {
+
+			path = path.replace('.pdf','.docx');
+
+		}
+
+		if(success === 'true'){
+
+			try
+			{
+			   window.external.OpenFile(path);
+			}
+			catch(err)
+			{
+				
+			}
+
+		}
+
+	})
+	//打开文件夹调用客户端文件夹
+	$('.open-folder').on('mousedown', (e) =>{
+		//获取文件路径（pdf后缀）
+		let path = $(e.target).parents('tr').attr('data-filePath');
 
 		let success = $(e.target).attr('data-success');
 
@@ -1166,7 +1203,7 @@ function _event(){
 
 			try
 			{
-			   window.external.OpenFile(path);
+			   window.external.OpenFileDir(path);
 			}
 			catch(err)
 			{
@@ -1293,11 +1330,9 @@ function _event(){
 
 		let path = $(e.target).attr('data-filePath')
 
-		let option = `${_path},${_pass}`;
-
 		try
 		{
-		   let pages = window.external.ChangeConvertPage(option);
+		   let pages = window.external.ChangeConvertPage(path, _pass);
 		   //转换页数弹框点击取消按钮不改变输入框值
 		   if(pages !== ''){
 
