@@ -32,6 +32,7 @@ function handleFileSelect(evt) {
 		_type,
 		pages,
 		_pages,
+		pagesPassword,
 		password,
 		ieVersionSix = navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE6.0",
 		ieVersionSeven = navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE7.0",
@@ -78,11 +79,21 @@ function handleFileSelect(evt) {
 	    //返回文件总页数和密码
 		try
 		{	
-		   pages = window.external.GetCountPage(_path).split(',')[0];
+		   pagesPassword = window.external.GetCountPage(_path);
+		   //客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
+		   if(pagesPassword !== ''){
 
-		   _pages = pages.split('-')[1];
+			   	pages = pagesPassword.split(',')[0];
 
-		   password = window.external.GetCountPage(_path).split(',')[1];
+			   _pages = pages.split('-')[1];
+
+			   password = pagesPassword.split(',')[1];
+
+		   } else {
+
+		   		return;
+
+		   }
 
 		}
 		catch(err)
@@ -151,12 +162,22 @@ function handleFileSelect(evt) {
 		    }
 			//返回文件总页数和密码
 			try
-			{
-			   pages = window.external.GetCountPage(_path).split(',')[0];
+			{	
+			   pagesPassword = window.external.GetCountPage(_path);
+			   //客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
+			   if(pagesPassword !== ''){
 
-			   _pages = pages.split('-')[1];
+				   	pages = pagesPassword.split(',')[0];
 
-			   password = window.external.GetCountPage(_path).split(',')[1];
+				   _pages = pages.split('-')[1];
+
+				   password = pagesPassword.split(',')[1];
+
+			   } else {
+
+			   		return;
+
+			   }
 
 			}
 			catch(err)
@@ -529,22 +550,23 @@ function _changeCss(path, $state){
  	_tr.find('.am-progress')
     	.addClass('none')
     .end()
-    	.find('.am-progress-bar').css('width',0)
-    .end()
-    	.find($state).removeClass('none')
-    .end()
     	.find('.open-text').attr('data-success','true')
     					   .removeClass('none')
     					   .attr('data-int',_int)
     .end()
     	.find('.open-folder').attr('data-success','true')
-    					   .removeClass('none')
+    					     .removeClass('none')
     .end()
     	.find('.tr-delete-r').removeClass('none')
     .end()
     	.find('.range').addClass('range-on')
+    				   .removeClass('Not-allowed')
+    .end()
     	.find('.checkbox').removeClass('checkbox-on')
-    	.find('.range').removeClass('Not-allowed')
+    .end()
+    	.find($state).removeClass('none')
+    .end()
+    	.find('.am-progress-bar').css('width',0)
     .end()
 
     _tr.attr('data-isOk','0')
@@ -768,26 +790,26 @@ function _gesture(){
 	$('.top-checkbox').removeClass('checkbox-on');
 }
 /**
- * 开始转换的样式操作
+ * 开始转换的已经选择转换文件样式禁止操作
  */
-function _startCss(obj, i){
+function _startCss(obj){
 	//禁止操作样式
-	let _public = $(obj[i]).find('.tr-public');
+	let _public = $(obj).find('.tr-public');
 
-	$(obj[i]).find('.range').addClass('Not-allowed');
+	$(obj).find('.range').addClass('Not-allowed');
 
 	_public.css('cursor','not-allowed')
 		   .attr('data-success','false')
 
-	$(obj[i]).find('.tr-delete-r').attr('data-success','false');
+	$(obj).find('.tr-delete-r').attr('data-success','false');
 	//所以页面
-	$(obj[i]).find('.range')
+	$(obj).find('.range')
 		.removeClass('range-on')
 	.end()
 		.attr('data-isOk','1')
 	.end()
 	//单选框
-	$(obj[i]).find('.checkbox').addClass('checkbox-on');
+	$(obj).find('.checkbox').addClass('checkbox-on');
 	//全选框
 	$('.top-checkbox').addClass('checkbox-on');
 
@@ -1098,7 +1120,6 @@ function _event(){
 
 			for(let i = 0, max = obj.length; i < max; i++){
 				
-				_startCss(obj, i)
 				//文件上传客户端
 				data = {}
 				//文件名字
@@ -1140,6 +1161,8 @@ function _event(){
 				file_num = 1;
 				//转换禁止操作dom
 				_ban(e);
+				//开始转换的已经选择转换文件样式禁止操作
+				_startCss(obj)
 			}
 
 		}
