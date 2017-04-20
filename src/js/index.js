@@ -85,6 +85,9 @@ function handleFileSelect(evt) {
 				password = pagesPassword.split(',')[1];
 			} else {
 
+				//拖拽框显示
+				_drag();
+
 				return;
 			}
 		} catch (err) {}
@@ -158,6 +161,8 @@ function handleFileSelect(evt) {
 
 					password = pagesPassword.split(',')[1];
 				} else {
+					//拖拽框显示
+					_drag();
 
 					return;
 				}
@@ -724,6 +729,9 @@ function _scrollUpdate() {
 
 	$('.thumb').height(scrollHeight);
 }
+/**
+ * 
+ */
 /**
  * 拖拽框显示
  */

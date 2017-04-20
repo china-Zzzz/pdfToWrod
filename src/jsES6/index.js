@@ -83,13 +83,16 @@ function handleFileSelect(evt) {
 		   //客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
 		   if(pagesPassword !== ''){
 
-			   	pages = pagesPassword.split(',')[0];
+				pages = pagesPassword.split(',')[0];
 
-			   _pages = pages.split('-')[1];
+				_pages = pages.split('-')[1];
 
-			   password = pagesPassword.split(',')[1];
+				password = pagesPassword.split(',')[1];
 
 		   } else {
+
+		   		//拖拽框显示
+			   	_drag();
 
 		   		return;
 
@@ -167,13 +170,15 @@ function handleFileSelect(evt) {
 			   //客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
 			   if(pagesPassword !== ''){
 
-				   	pages = pagesPassword.split(',')[0];
+					pages = pagesPassword.split(',')[0];
 
-				   _pages = pages.split('-')[1];
+					_pages = pages.split('-')[1];
 
-				   password = pagesPassword.split(',')[1];
+					password = pagesPassword.split(',')[1];
 
 			   } else {
+			   		//拖拽框显示
+			   		_drag();
 
 			   		return;
 
@@ -849,6 +854,9 @@ function _scrollUpdate(){
 	$('.thumb').height(scrollHeight);
 
 }
+/**
+ * 
+ */
 /**
  * 拖拽框显示
  */
