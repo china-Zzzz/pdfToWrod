@@ -1102,7 +1102,7 @@ function _event(){
 				//文件上传客户端
 				data = {}
 				//文件名字
-				fileName = obj[i].getAttribute('data-name');
+				fileName = Base64.decode(obj[i].getAttribute('data-name'));
 				//文件大小
 				fileSize = obj[i].getAttribute('data-fileSize');
 				//文件路径
@@ -1134,7 +1134,7 @@ function _event(){
 			{
 				
 			}
-			//是否可以转换，conversionIsOk = "true" 可以转换（执行样式控制）conversionIsOk = "true" 不可以转换
+			//是否可以转换，conversionIsOk = "true" 可以转换（执行样式控制）conversionIsOk = "false" 不可以转换
 			if(conversionIsOk === "true"){
 				//用于判断客户端是否转换完成
 				file_num = 1;

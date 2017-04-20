@@ -264,12 +264,13 @@ section {
 #table table .thead-tr:hover {
   background: #f5f5f5;
 }
-#table table tr .open-texts {
+#table table tr .open-text {
   display: inline-block;
   float: left;
-  margin-top: 0px;
+  cursor: pointer;
+  margin: 0px 3px 0;
 }
-#table table tr .open-text {
+#table table tr .open-folder {
   display: inline-block;
   float: left;
   cursor: pointer;
