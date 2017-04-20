@@ -935,7 +935,7 @@ function _event() {
 				//文件上传客户端
 				data = {};
 				//文件名字
-				fileName = Base64.decode(obj[i].getAttribute('data-name'));
+				fileName = obj[i].getAttribute('data-fileName');
 				//文件大小
 				fileSize = obj[i].getAttribute('data-fileSize');
 				//文件路径

@@ -247,7 +247,7 @@
 <!-- data-fileSize "文件大小" data-filePath "文件路径" data-name "文件名" data-password "文件密码" data-pages "文件页数" -->
 <script id="template" type="text/x-handlebars-template">
   {{#each this}} 
-    <tr class="tr" data-bool="1" data-fileSize="{{this.sendSize}}" data-filePath="{{this.filePath}}" data-name="{{this.name}}" data-password="{{this.filePassword}}" data-pages="{{this.filePages}}" data-isOk='0' data-path="">
+    <tr class="tr" data-bool="1" data-fileSize="{{this.sendSize}}" data-filePath="{{this.filePath}}" data-fileName="{{this.fileName}}" data-name="{{this.name}}" data-password="{{this.filePassword}}" data-pages="{{this.filePages}}" data-isOk='0' data-path="">
       <td>
         <div class="checkbox icon-u772 icon-u758 tr-public" data-checkbox='1' data-success="true"></div>
         <div class="fileName" title="{{this.fileName}}">{{this.fileName}}</div>
