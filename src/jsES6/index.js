@@ -80,28 +80,29 @@ function handleFileSelect(evt) {
 		try
 		{	
 		   pagesPassword = window.external.GetCountPage(_path);
-		   //客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
-		   if(pagesPassword !== ''){
-
-				pages = pagesPassword.split(',')[0];
-
-				_pages = pages.split('-')[1];
-
-				password = pagesPassword.split(',')[1];
-
-		   } else {
-
-		   		//拖拽框显示
-			   	_drag();
-
-		   		return;
-
-		   }
 
 		}
 		catch(err)
 		{
 			
+		}
+
+		//客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
+		if(pagesPassword !== ''){
+
+			pages = pagesPassword.split(',')[0];
+
+			_pages = pages.split('-')[1];
+
+			password = pagesPassword.split(',')[1];
+
+		} else {
+
+			//拖拽框显示
+		   	_drag();
+
+			return;
+
 		}
 
 		_path = Base64.encode(_path);
@@ -167,27 +168,29 @@ function handleFileSelect(evt) {
 			try
 			{	
 			   pagesPassword = window.external.GetCountPage(_path);
-			   //客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
-			   if(pagesPassword !== ''){
-
-					pages = pagesPassword.split(',')[0];
-
-					_pages = pages.split('-')[1];
-
-					password = pagesPassword.split(',')[1];
-
-			   } else {
-			   		//拖拽框显示
-			   		_drag();
-
-			   		return;
-
-			   }
 
 			}
 			catch(err)
 			{
 				
+			}
+
+			//客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
+			if(pagesPassword !== ''){
+
+				pages = pagesPassword.split(',')[0];
+
+				_pages = pages.split('-')[1];
+
+				password = pagesPassword.split(',')[1];
+
+			} else {
+
+				//拖拽框显示
+			   	_drag();
+
+				return;
+
 			}
 
 			_path = Base64.encode(_path);
