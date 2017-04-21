@@ -174,8 +174,12 @@ function _fileIsAdd(_type, _path) {
 
 		password = pagesPassword.split(',')[1];
 	} else {
-		//点击弹框取消按钮支持从新选择文件
+		//点击密码弹框取消按钮支持从新选择文件
 		$("#fileuploads").after($("#fileuploads").clone().val("")).remove();
+
+		_off();
+
+		_event();
 
 		return false;
 	}
