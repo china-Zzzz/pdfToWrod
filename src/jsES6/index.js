@@ -98,8 +98,9 @@ function handleFileSelect(evt) {
 
 		} else {
 
-			//拖拽框显示
-		   	_drag();
+			$("#fileuploads").val('')
+							 .after($("#fileuploads").clone().val(""))
+							 .remove(); 
 
 			return;
 
@@ -186,8 +187,9 @@ function handleFileSelect(evt) {
 
 			} else {
 
-				//拖拽框显示
-			   	_drag();
+				$("#fileuploads").val('')
+							     .after($("#fileuploads").clone().val(""))
+							     .remove(); 
 
 				return;
 
@@ -223,6 +225,9 @@ function handleFileSelect(evt) {
 	_template(output);
 
 }
+/**
+ * 
+ */
 /**
  * 防止文件重复选择
  */
