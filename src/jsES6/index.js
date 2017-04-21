@@ -161,14 +161,7 @@ function _fileIsAdd(_type, _path){
 		return;
 	}
 
-	//防止文件重复选择
-	flieErr = _preventRepeatChoice(_path);
-
-	if(!flieErr){
-		return;
-	}
-
-    //返回文件总页数和密码
+	//返回文件总页数和密码
 	try
 	{	
 	   pagesPassword = window.external.GetCountPage(_path);
@@ -196,6 +189,13 @@ function _fileIsAdd(_type, _path){
 
 		return;
 
+	}
+
+	//防止文件重复选择
+	flieErr = _preventRepeatChoice(_path);
+
+	if(!flieErr){
+		return;
 	}
 
 	_path = Base64.encode(_path);

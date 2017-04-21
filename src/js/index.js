@@ -153,13 +153,6 @@ function _fileIsAdd(_type, _path) {
 		return;
 	}
 
-	//防止文件重复选择
-	flieErr = _preventRepeatChoice(_path);
-
-	if (!flieErr) {
-		return;
-	}
-
 	//返回文件总页数和密码
 	try {
 		pagesPassword = window.external.GetCountPage(_path);
@@ -177,6 +170,13 @@ function _fileIsAdd(_type, _path) {
 		//点击弹框取消按钮支持从新选择文件
 		$("#fileuploads").val('').after($("#fileuploads").clone().val("")).remove();
 
+		return;
+	}
+
+	//防止文件重复选择
+	flieErr = _preventRepeatChoice(_path);
+
+	if (!flieErr) {
 		return;
 	}
 
