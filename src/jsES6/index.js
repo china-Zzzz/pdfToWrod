@@ -190,13 +190,8 @@ function _fileIsAdd(_type, _path){
 
 	} else {
 		//点击弹框取消按钮支持从新选择文件
-		$("#fileuploads").val('')
-						 .after($("#fileuploads").clone().val(""))
+		$("#fileuploads").after($("#fileuploads").clone().val(""))
 						 .remove(); 
-
-		_off();
-
-		_event();
 
 		return false;
 
@@ -830,8 +825,7 @@ function _startCss(obj){
  */
 function _delete(file){
 	//取消文件后还可以上传该文件
-	file.val('')
-		.after(file.clone().val(""))
+	file.after(file.clone().val(""))
 		.remove(); 
 
 	_off();
