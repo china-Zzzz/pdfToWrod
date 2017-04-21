@@ -379,7 +379,13 @@ function _event(){
 
 		try
 		{
-		   window.external.SetPassword(pass);
+			var passwordIsOk = window.external.SetPassword(pass);
+
+			if(passwordIsOk === 'false'){
+
+				$('.password-input span').removeClass('none');
+
+			}
 		}
 		catch(err)
 		{

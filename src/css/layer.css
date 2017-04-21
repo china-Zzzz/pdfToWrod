@@ -221,6 +221,12 @@ section .download-p p em{
 	margin-right: 10px;
 	color: #5E5E5E;
 }
+.password-input span {
+	float: right;
+    font-style: normal;
+    color: #FF0000;
+    line-height: 33px;
+}
 #ordinary footer {
 	bottom: 27px;
 }

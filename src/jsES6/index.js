@@ -22,18 +22,14 @@ function handleFileSelect(evt) {
 		_size,
 		_path,
 		length,
-		flieErr,
 		fileOK,
 		path='',
 		name,
 		xmlDoc,
 		fileName,
+		fileOption,
 		sendSize,
 		_type,
-		pages,
-		_pages,
-		pagesPassword,
-		password,
 		ieVersionSix = navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE6.0",
 		ieVersionSeven = navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE7.0",
 		ieVersionEight = navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE8.0",
@@ -55,12 +51,16 @@ function handleFileSelect(evt) {
 		//文件类型
 		_type = (fileName.split('.'))[fileName.split('.').length - 1];
 
-		if(_type !== 'pdf'){
+		//公用部分
+		fileOption = _fileIsAdd(_type, _path);
 
-			alert('不支持除pdf文件')
+		//特殊字符转换
+		if(regular.test(name)){
 
-			return;
-		}
+	    	name = Base64.encode(name);
+
+	    }
+
 		//调用客户端返回文件大小
 		try
 		{
@@ -70,58 +70,15 @@ function handleFileSelect(evt) {
 		{
 			
 		}
-		//特殊字符转换
-		if(regular.test(name)){
-
-	    	name = Base64.encode(name);
-
-	    }
-	    //返回文件总页数和密码
-		try
-		{	
-		   pagesPassword = window.external.GetCountPage(_path);
-
-		}
-		catch(err)
-		{
-			
-		}
-
-		//客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
-		if(pagesPassword !== ''){
-
-			pages = pagesPassword.split(',')[0];
-
-			_pages = pages.split('-')[1];
-
-			password = pagesPassword.split(',')[1];
-
-		} else {
-
-			$("#fileuploads").val('')
-							 .after($("#fileuploads").clone().val(""))
-							 .remove(); 
-
-			return;
-
-		}
-
-		_path = Base64.encode(_path);
-		//防止文件重复选择
-		flieErr = _preventRepeatChoice(_path);
-
-		if(!flieErr){
-			return;
-		}
 		
 		op = {
 			fileName:fileName,
 			fileSize:'',
 			filePath:path,
-			fullPath:_path,
-			filePassword:password,
-			filePages:pages,
-			pages:_pages,
+			fullPath:fileOption._path,
+			filePassword:fileOption.password,
+			filePages:fileOption.pages,
+			pages:fileOption._pages,
 			name:name
 		}
 
@@ -142,6 +99,7 @@ function handleFileSelect(evt) {
 			sendSize = f.size/1000;
 			//文件名
 			name = f.name;
+
 			if(fileOK){
 				//根据客户端要求传输的路径为不加文件名称的路径
 				path = evt.target.value.split(name)[0];
@@ -152,66 +110,25 @@ function handleFileSelect(evt) {
 			_path = `${path}${name}`
 			//文件类型
 			_type = (name.split('.'))[name.split('.').length - 1];
+			//公用部分
+			fileOption = _fileIsAdd(_type, _path);
 
-			if(_type !== 'pdf'){
-
-				alert('不支持除pdf文件')
-
-				return;
-			}
 			//特殊字符转换
 			if(regular.test(name)){
 
 		    	name = Base64.encode(name);
 
 		    }
-			//返回文件总页数和密码
-			try
-			{	
-			   pagesPassword = window.external.GetCountPage(_path);
-
-			}
-			catch(err)
-			{
-				
-			}
-
-			//客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
-			if(pagesPassword !== ''){
-
-				pages = pagesPassword.split(',')[0];
-
-				_pages = pages.split('-')[1];
-
-				password = pagesPassword.split(',')[1];
-
-			} else {
-
-				$("#fileuploads").val('')
-							     .after($("#fileuploads").clone().val(""))
-							     .remove(); 
-
-				return;
-
-			}
-
-			_path = Base64.encode(_path);
-			//防止文件重复选择
-			flieErr = _preventRepeatChoice(_path);
-
-			if(!flieErr){
-				continue;
-			}
 
 			op = {
 				fileName:f.name,
 				fileSize:_size,
 				sendSize:sendSize,
 				filePath:path,
-				fullPath:_path,
-				filePassword:password,
-				filePages:pages,
-				pages:_pages,
+				fullPath:fileOption._path,
+				filePassword:fileOption.password,
+				filePages:fileOption.pages,
+				pages:fileOption._pages,
 				name:name
 			}
 
@@ -226,8 +143,73 @@ function handleFileSelect(evt) {
 
 }
 /**
- * 
+ * 文件是否可以添加(可以添加返回 文件页数范围、文件总页数、文件路径转Base64、文件密码)
  */
+function _fileIsAdd(_type, _path){
+
+	let pages,
+		_pages,
+		flieErr,
+		pagesPassword,
+		password,
+		option
+
+	if(_type !== 'pdf'){
+
+		alert('不支持除pdf文件')
+
+		return;
+	}
+
+	//防止文件重复选择
+	flieErr = _preventRepeatChoice(_path);
+
+	if(!flieErr){
+		return;
+	}
+
+    //返回文件总页数和密码
+	try
+	{	
+	   pagesPassword = window.external.GetCountPage(_path);
+
+	}
+	catch(err)
+	{
+		
+	}
+
+	//客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
+	if(pagesPassword !== ''){
+
+		pages = pagesPassword.split(',')[0];
+
+		_pages = pages.split('-')[1];
+
+		password = pagesPassword.split(',')[1];
+
+	} else {
+		//点击弹框取消按钮支持从新选择文件
+		$("#fileuploads").val('')
+						 .after($("#fileuploads").clone().val(""))
+						 .remove(); 
+
+		return;
+
+	}
+
+	_path = Base64.encode(_path);
+
+	option = {
+		pages:pages,
+		_pages:_pages,
+		_path:_path,
+		password:password
+	}
+
+	return option;
+
+}
 /**
  * 防止文件重复选择
  */
@@ -559,16 +541,20 @@ function _changeCss(path, $state){
  	_tr.find('.tr-delete-r').attr('data-success','true');
  	//转换成功/转换失败后可选择
  	_tr.find('.checkbox').attr('data-success','true');
+ 	//转换成功显示"打开文件","打开文件夹"
+ 	if($state === "转换成功"){
+
+ 		_tr.find('.open-text').attr('data-success','true')
+    					   	  .removeClass('none')
+    					      .attr('data-int',_int)
+    	.end()
+    		.find('.open-folder').attr('data-success','true')
+    					         .removeClass('none')
+    	.end()
+ 	}
 
  	_tr.find('.am-progress')
     	.addClass('none')
-    .end()
-    	.find('.open-text').attr('data-success','true')
-    					   .removeClass('none')
-    					   .attr('data-int',_int)
-    .end()
-    	.find('.open-folder').attr('data-success','true')
-    					     .removeClass('none')
     .end()
     	.find('.tr-delete-r').removeClass('none')
     .end()
@@ -934,6 +920,14 @@ function _event(){
 
 		let path = $(e.target).attr('data-path');
 
+		let html = $(e.target).html();
+
+		let _html = $('.top-drop-html').html();
+
+		$(e.target).html(_html);
+
+		$('.top-drop-html').html(html);
+
 		if(path === '1'){
 
 			$(e.target).attr('data-path','0');
@@ -954,6 +948,8 @@ function _event(){
 			$(e.target).attr('data-path','1');
 
 		}
+
+		$(e.target).addClass('none');
 
 	})
 	//转换格式mousedown
