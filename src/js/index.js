@@ -55,7 +55,10 @@ function handleFileSelect(evt) {
 
 		//公用部分
 		fileOption = _fileIsAdd(_type, _path);
-
+		//无法添加文件禁止继续执行
+		if (!fileOption) {
+			return;
+		}
 		//特殊字符转换
 		if (regular.test(name)) {
 
@@ -107,6 +110,10 @@ function handleFileSelect(evt) {
 			_type = name.split('.')[name.split('.').length - 1];
 			//公用部分
 			fileOption = _fileIsAdd(_type, _path);
+			//无法添加文件禁止继续执行
+			if (!fileOption) {
+				return;
+			}
 
 			//特殊字符转换
 			if (regular.test(name)) {
@@ -150,7 +157,7 @@ function _fileIsAdd(_type, _path) {
 
 		alert('不支持除pdf文件');
 
-		return;
+		return false;
 	}
 
 	//返回文件总页数和密码
@@ -170,14 +177,14 @@ function _fileIsAdd(_type, _path) {
 		//点击弹框取消按钮支持从新选择文件
 		$("#fileuploads").val('').after($("#fileuploads").clone().val("")).remove();
 
-		return;
+		return false;
 	}
 
 	//防止文件重复选择
 	flieErr = _preventRepeatChoice(_path);
 
 	if (!flieErr) {
-		return;
+		return false;
 	}
 
 	_path = Base64.encode(_path);
