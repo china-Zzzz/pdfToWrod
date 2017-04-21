@@ -194,6 +194,10 @@ function _fileIsAdd(_type, _path){
 						 .after($("#fileuploads").clone().val(""))
 						 .remove(); 
 
+		_off();
+
+		_event();
+
 		return false;
 
 	}

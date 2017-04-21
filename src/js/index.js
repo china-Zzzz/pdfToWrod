@@ -177,6 +177,10 @@ function _fileIsAdd(_type, _path) {
 		//点击弹框取消按钮支持从新选择文件
 		$("#fileuploads").val('').after($("#fileuploads").clone().val("")).remove();
 
+		_off();
+
+		_event();
+
 		return false;
 	}
 
