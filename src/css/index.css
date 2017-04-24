@@ -59,7 +59,7 @@ header {
   float: left;
   margin: 0px 4px 0 0;
 }
-.header-right .service a {
+.header-right .service .a {
   color: #fff;
   font-size: 12px;
   float: left;
@@ -97,7 +97,7 @@ header {
   padding: 0px 13px;
   cursor: pointer;
 }
-.header-file ul li a {
+.header-file ul li .a {
   display: block;
   width: 90px;
   height: 42px;
@@ -838,19 +838,16 @@ section {
   color: #797979;
   cursor: pointer;
 }
-#drag .foot ul .foot-r a {
-  display: block;
-}
 #drag .foot ul .foot-r:hover i{
   background-position: -1488px -118px;
 }
 #drag .foot ul .foot-k:hover i{
   background-position: -836px -86px;
 }
-#drag .foot ul li:hover a {
+#drag .foot ul li:hover .a {
   color: #F9834A;
 }
-#drag .foot ul li:active a {
+#drag .foot ul li:active .a {
   color: #F85507;
 }
 #drag .foot ul li i {

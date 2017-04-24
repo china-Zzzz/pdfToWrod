@@ -117,7 +117,7 @@ function handleFileSelect(evt) {
 			fileOption = _fileIsAdd(_type, _path);
 			//无法添加文件禁止继续执行
 			if(!fileOption){
-				return;
+				continue;
 			}
 
 			//特殊字符转换
@@ -173,33 +173,33 @@ function _fileIsAdd(_type, _path){
 	{	
 	   pagesPassword = window.external.GetCountPage(_path);
 
+	    //客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
+		if(pagesPassword !== ''){
+
+			pages = pagesPassword.split(',')[0];
+
+			_pages = pages.split('-')[1];
+
+			password = pagesPassword.split(',')[1];
+
+		} else {
+			//点击密码弹框取消按钮支持从新选择文件
+			$("#fileuploads").after($("#fileuploads").clone().val(""))
+							 .remove(); 
+
+			_off();
+
+			_event();
+
+			return false;
+
+		}
+
 	}
 	catch(err)
 	{
 		
 	}
-
-	// //客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
-	// if(pagesPassword !== ''){
-
-	// 	pages = pagesPassword.split(',')[0];
-
-	// 	_pages = pages.split('-')[1];
-
-	// 	password = pagesPassword.split(',')[1];
-
-	// } else {
-	// 	//点击密码弹框取消按钮支持从新选择文件
-	// 	$("#fileuploads").after($("#fileuploads").clone().val(""))
-	// 					 .remove(); 
-
-	// 	_off();
-
-	// 	_event();
-
-	// 	return false;
-
-	// }
 
 	//防止文件重复选择
 	flieErr = _preventRepeatChoice(_path);
@@ -525,9 +525,11 @@ function SetConvertProgress(option){
 
 	let _open = $('.open[data-filepath='+'"'+path+'"'+']');
 
-	_open.nextAll('.tr-delete').find('.open-text').addClass('none')
+	_open.nextAll('.tr-delete').find('.open-text').addClass('none');
 
-	_open.nextAll('.tr-delete').find('.tr-delete-r').addClass('none')
+	_open.nextAll('.tr-delete').find('.tr-delete-r').addClass('none');
+
+	_open.nextAll('.tr-delete').find('.open-folder').addClass('none');
 
 	_open.find('.success')
 		.addClass('none')
@@ -1210,11 +1212,6 @@ function _event(){
 			{
 			   var isClickCancel =  window.external.UserCustomDir();
 
-			   if(isClickCancel === ''){
-
-
-
-			   }
 			}
 			catch(err)
 			{
@@ -1323,6 +1320,45 @@ function _event(){
 		try
 		{
 		   window.external.CheckUpdate();
+		}
+		catch(err)
+		{
+			
+		}
+		
+	})
+	//客服
+	$('.service .a').on('mousedown', () =>{
+
+		try
+		{
+		   window.external.OpenUrl("http://pdf2word.foxitreader.cn");
+		}
+		catch(err)
+		{
+			
+		}
+		
+	})
+	//关于我们
+	$('.aboutUs').on('mousedown', () =>{
+
+		try
+		{
+		   window.external.OpenUrl("http://pdf2word.foxitreader.cn");
+		}
+		catch(err)
+		{
+			
+		}
+		
+	})
+	//在线转换
+	$('.open-url').on('mousedown', () =>{
+
+		try
+		{
+		   window.external.OpenUrl("http://pdftoword.foxitreader.cn/");
 		}
 		catch(err)
 		{
