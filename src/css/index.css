@@ -94,13 +94,13 @@ header {
 .header-file ul li {
   float: left;
   margin-right: 2px;
-  padding: 10px 13px;
+  padding: 0px 13px;
   cursor: pointer;
 }
 .header-file ul li a {
   display: block;
   width: 90px;
-  height: 22px;
+  height: 42px;
 }
 .header-file ul li:hover {
   background: #FAA175;
@@ -112,6 +112,7 @@ header {
   display: block;
   float: left;
   cursor: pointer;
+  margin-top: 9px;
 }
 .land {
   position: absolute;
@@ -569,12 +570,12 @@ section {
 .file {
   overflow: hidden;
   width: 56px;
-  height: 22px;
+  height: 42px;
   overflow: hidden;
   float: left;
   font-size: 14px;
   color: #fff;
-  line-height: 24px;
+  line-height: 42px;
   margin-left: 8px;
   cursor: pointer;
 }

@@ -165,24 +165,27 @@ function _fileIsAdd(_type, _path) {
 		pagesPassword = window.external.GetCountPage(_path);
 	} catch (err) {}
 
-	//客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
-	if (pagesPassword !== '') {
+	// //客户端返回pagesPassword = '' 时表示弹框被取消 不添加文件列表
+	// if(pagesPassword !== ''){
 
-		pages = pagesPassword.split(',')[0];
+	// 	pages = pagesPassword.split(',')[0];
 
-		_pages = pages.split('-')[1];
+	// 	_pages = pages.split('-')[1];
 
-		password = pagesPassword.split(',')[1];
-	} else {
-		//点击密码弹框取消按钮支持从新选择文件
-		$("#fileuploads").after($("#fileuploads").clone().val("")).remove();
+	// 	password = pagesPassword.split(',')[1];
 
-		_off();
+	// } else {
+	// 	//点击密码弹框取消按钮支持从新选择文件
+	// 	$("#fileuploads").after($("#fileuploads").clone().val(""))
+	// 					 .remove(); 
 
-		_event();
+	// 	_off();
 
-		return false;
-	}
+	// 	_event();
+
+	// 	return false;
+
+	// }
 
 	//防止文件重复选择
 	flieErr = _preventRepeatChoice(_path);
@@ -393,13 +396,23 @@ function UserCustomDir(opiton) {
 
 	var _html = $('.top-drop-html').html();
 
+	var _path = $('.drop-path').html();
+
 	if (opiton !== '') {
 
 		$('.drop-path').text(opiton).attr('title', opiton).removeClass('none');
 
-		$('＃start').attr('data-path', opiton);
+		$('#start').attr('data-path', opiton);
 
 		$tr_boll.attr('data-path', opiton);
+	} else {
+		//自定义路径是否为空，空显示和PDF相同路径
+		if (_path === '') {
+
+			$('.top-drop-html').html("和PDF相同路径");
+
+			$('.drop-path').addClass('none');
+		}
 	}
 }
 /**
@@ -488,7 +501,7 @@ function _changeCss(path, $state) {
 	//转换成功/转换失败后可选择
 	_tr.find('.checkbox').attr('data-success', 'true');
 	//转换成功显示"打开文件","打开文件夹"
-	if ($state === "转换成功") {
+	if ($state === ".success") {
 
 		_tr.find('.open-text').attr('data-success', 'true').removeClass('none').attr('data-int', _int).end().find('.open-folder').attr('data-success', 'true').removeClass('none').end();
 	}
@@ -1023,7 +1036,9 @@ function _event() {
 		if (file_num === 0) {
 
 			try {
-				window.external.UserCustomDir();
+				var isClickCancel = window.external.UserCustomDir();
+
+				if (isClickCancel === '') {}
 			} catch (err) {}
 		}
 	});
