@@ -543,7 +543,7 @@ function SetConvertProgress(option){
 /**
  * 转换成功／转换失败样式操作
  */
-function _changeCss(path, $state){
+function _changeCss(path, _path, $state){
 
 	let _name = getFileName(path);
 
@@ -593,7 +593,7 @@ function _changeCss(path, $state){
     .end()
 
     _tr.attr('data-isOk','0')
- 	   .attr('data-path', path);
+ 	   .attr('data-path', _path);
 
 	_trPublic.css('cursor','pointer')
 			 .attr('data-success','true');
@@ -601,20 +601,20 @@ function _changeCss(path, $state){
 }
 /**
  * 文件转换成功接口
- * @param  {[string]} opiton 客户端传入文件转换成功路径（后缀为.pdf）
+ * @param  {[string]} path 客户端传入原始文件路径（后缀为.pdf）_path客户端传入转换后文件路径（后缀为转换后的文件后缀）
  */
- function ChangeSuccess(path){
+ function ChangeSuccess(path, _path){
 
- 	_changeCss(path, '.success')
+ 	_changeCss(path, _path, '.success')
 
  }
  /**
  * 文件转换失败接口
- * @param  {[string]} opiton 客户端传入文件转换失败路径（后缀为.pdf）
+ * @param  {[string]} path 客户端传入原始文件路径（后缀为.pdf）_path客户端传入转换后文件路径（后缀为转换后的文件后缀）
  */
- function ChangeFail(path){
+ function ChangeFail(path, _path){
 
- 	_changeCss(path, '.err')
+ 	_changeCss(path, _path, '.err')
 
  }
 /**
@@ -1222,23 +1222,12 @@ function _event(){
 	})
 	//打开文件调用客户端文件
 	$('.open-text').on('mousedown', (e) =>{
-		//获取文件路径（pdf后缀）
+		//获取转换后文件路径
 		let path = $(e.target).parents('tr').attr('data-path');
 
 		let success = $(e.target).attr('data-success');
 
 		let _int = $(e.target).attr('data-int');
-
-		//文件格式转换（转换为转换后的后缀）
-		if(_int === '0'){
-
-			path = path.replace('.pdf','.rtf');
-
-		} else {
-
-			path = path.replace('.pdf','.docx');
-
-		}
 
 		if(success === 'true'){
 
@@ -1257,7 +1246,20 @@ function _event(){
 	//打开文件夹调用客户端文件夹
 	$('.open-folder').on('mousedown', (e) =>{
 		//获取文件路径（pdf后缀）
-		let path = $(e.target).parents('tr').attr('data-filePath');
+		let $path = $(e.target).parents('tr').attr('data-path');
+
+		let _path = '';
+
+		let path = $path.split('\\');
+
+		path.splice(path.length-1,1)
+
+		//拼接完成路径的地址（不带文件名）
+		for(var i = 0, max = path.length; i < max; i++){
+
+			_path += path[i] + "\\"
+
+		}
 
 		let success = $(e.target).attr('data-success');
 
