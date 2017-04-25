@@ -3,7 +3,6 @@ var file_num = 0;
 var scrollbarOK = false;
 //存储选择后文件的路径转Base64用于防止重复选择
 var filesArr = [];
-alert("最新版")
 const regular = /^([^\`\+\~\!\#\$\%\^\&\*\(\)\|\}\{\=\"\'\！\￥\……\（\）\——]*[\+\~\!\#\$\%\^\&\*\(\)\|\}\{\=\"\'\`\！\?\:\<\>\•\“\”\；\‘\‘\〈\ 〉\￥\……\（\）\——\｛\｝\【\】\\\/\;\：\？\《\》\。\，\、\[\]\,]+.*)$/;
 /**
  * 获取文件信息
@@ -305,6 +304,11 @@ function SetUserInfo(option){
 	let html = template(_option);
 
 	$('.land').html(html);
+
+	//设置默认头像
+	if(_option.headIcon === ''){
+		$('.land img').addClass('icon-u66');
+	}
 
 	_userOff();
 

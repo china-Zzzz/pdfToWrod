@@ -117,7 +117,6 @@ header {
 .land {
   position: absolute;
   right: 152px;
-  top: 3px;
   padding: 0 4px 4px;
   cursor: pointer;
 }
@@ -227,7 +226,7 @@ header {
   text-indent: 10px;
 }
 #drops .icon-u698{    
-  background-position: -820px -175px;
+  background-position: -840px -175px;
   width: 12px;
   height: 12px;
 }
@@ -250,11 +249,11 @@ section {
 }
 #table table .tr:hover .icon-u758{
   background-image: url(../img/sprite.png);
-  background-position: -928px -174px;
+  background-position: -934px -174px;
 }
 #table table .tr:hover .icon-u772{
   background-image: url(../img/sprite.png);
-  background-position: -942px -174px;
+  background-position: -948px -174px;
 }
 #table table .tr:hover .checkbox-on{
   background-image: url(../img/sprite.png);
@@ -341,11 +340,11 @@ section {
 }
 #table .top-table .icon-u758:hover{
   background-image: url(../img/sprite.png);
-  background-position: -928px -174px;
+  background-position: -934px -174px;
 }
 #table .top-table .icon-u772:hover{
   background-image: url(../img/sprite.png);
-  background-position: -942px -174px;
+  background-position: -948px -174px;
 }
 #table .top-table .checkbox-on:hover{
   background-image: url(../img/sprite.png);
@@ -840,7 +839,7 @@ section {
   cursor: pointer;
 }
 #drag .foot ul .foot-r:hover i{
-  background-position: -1488px -118px;
+  background-position: -1518px -86px;
 }
 #drag .foot ul .foot-k:hover i{
   background-position: -836px -86px;
