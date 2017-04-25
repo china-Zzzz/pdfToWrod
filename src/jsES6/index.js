@@ -1587,3 +1587,4 @@ function _off(){
 }	
 
 _event();
+SetUserInfo('{"nickName":"sdfdsfdsfsd"}')

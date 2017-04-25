@@ -126,6 +126,7 @@ header {
 }
 .land p {
   float: left;
+  width: 40px\0;
   margin: 6px 2px 0 7px;
   color: #fff;
   font-size: 12px;
