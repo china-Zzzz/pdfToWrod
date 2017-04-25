@@ -5,7 +5,7 @@
  */
 function setParam(data) {
 	//弹框类型（“1” 普通弹框， “2” 进度条弹框，“3” 支付弹框 ）
-	var data = Base64.decode(JSON.stringify(GetQueryString('json')));
+	//var data = Base64.decode(JSON.stringify(GetQueryString('json')))
 	var _data = JSON.parse(data);
 
 	if (_data.type === "1") {
@@ -246,7 +246,7 @@ function _css() {
 
 	$('.footer-button').width(_width * length + 20);
 
-	$('footer').css("margin-left", -((_width * length + 20) / 2) - 10);
+	$('footer').css("margin-left", -((_width * length + 20) / 2));
 
 	$('.top').css('margin-left', -($width / 2));
 
@@ -586,4 +586,4 @@ function _off() {
 //         }]
 //     }
 // }
-setParam();
+//setParam()
