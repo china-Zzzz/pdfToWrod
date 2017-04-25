@@ -87,6 +87,8 @@ function handleFileSelect(evt) {
 
 		output.push(op);
 
+		_template(output);
+
 	} else {
 
 		files = evt.target.files?evt.target.files:evt.dataTransfer.files;
@@ -140,13 +142,15 @@ function handleFileSelect(evt) {
 			}
 
 		  	output.push(op);
+
+		  	_template(output);
+
+		  	output = [];
 		}
 
 		fileOK = true;
 
 	}
-
-	_template(output);
 
 }
 /**
@@ -439,7 +443,7 @@ function UserCustomDir(opiton){
 
 	let _html = $('.top-drop-html').html();
 
-	let _path = $('.drop-path').html();
+	let _path = $('.drop-path').html().trim();
 
 	if(opiton !== ''){
 
@@ -456,6 +460,8 @@ function UserCustomDir(opiton){
 		if(_path === ''){
 
 			$('.top-drop-html').html("和PDF相同路径");
+
+			$('.top-drop-k').html("自定义路径");
 
 			$('.drop-path').addClass('none');
 
@@ -896,12 +902,7 @@ function _drag(){
  * 事件绑定
  */
 function _event(){
-	//关于我们
-	$('.aboutUs').on('mousedown', () =>{
 
-		window.open("http://pdf2word.foxitreader.cn")
-
-	})
 	//屏蔽鼠标右键
 	$(document).bind("contextmenu",(e) =>{   
 	        return false;      
@@ -1587,4 +1588,3 @@ function _off(){
 }	
 
 _event();
-SetUserInfo('{"nickName":"sdfdsfdsfsd"}')
