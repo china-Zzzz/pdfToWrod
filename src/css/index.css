@@ -817,8 +817,8 @@ section {
   background: #e1e1e1;
   position: absolute;
   width: 92px;
-  margin: 16px 0 0 12px;
-  *position: absolute;
+  top: 16px;
+  left: 12px;
   *top: 15px;
   *left: -59px
 }

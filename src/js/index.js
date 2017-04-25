@@ -518,6 +518,9 @@ function _changeCss(path, _path, $state) {
 	if ($state === ".success") {
 
 		_tr.find('.open-text').attr('data-success', 'true').removeClass('none').attr('data-int', _int).end().find('.open-folder').attr('data-success', 'true').removeClass('none').end();
+	} else {
+
+		_tr.find('.success').addClass('none');
 	}
 
 	_tr.find('.am-progress').addClass('none').end().find('.tr-delete-r').removeClass('none').end().find('.range').addClass('range-on').removeClass('Not-allowed').end().find('.checkbox').removeClass('checkbox-on').end().find($state).removeClass('none').end().find('.am-progress-bar').css('width', 0).end();
@@ -536,11 +539,11 @@ function ChangeSuccess(path, _path) {
 }
 /**
 * 文件转换失败接口
-* @param  {[string]} path 客户端传入原始文件路径（后缀为.pdf）_path客户端传入转换后文件路径（后缀为转换后的文件后缀）
+* @param  {[string]} path 客户端传入原始文件路径（后缀为.pdf
 */
-function ChangeFail(path, _path) {
+function ChangeFail(path) {
 
-	_changeCss(path, _path, '.err');
+	_changeCss(path, '', '.err');
 }
 /**
  * 文件是否有选择
