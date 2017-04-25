@@ -304,9 +304,6 @@ section {
 #table table th {
   color: #868686;
 }
-#table .open span{
-  position: relative;
-}
 #table .top-table {
   background: #f5f5f5;
   position: absolute;

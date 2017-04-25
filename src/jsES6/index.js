@@ -1579,6 +1579,10 @@ function _off(){
 
 	$('.aboutUs').off();
 
+	$('.open-url').off();
+
+	$('.service .a').off();
+
 	$('.text').off();
 
 	$('.open-text').off();
