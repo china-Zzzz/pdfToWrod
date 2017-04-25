@@ -1,8 +1,6 @@
 "use strict";
 
 var file_num = 0;
-//判断保存文件是在自定路径还是相同路径"file_custom" false 相同路径 "file_custom" true 自定义路径 
-var file_custom = false;
 //判断滚动条是否首次加载
 var scrollbarOK = false;
 //存储选择后文件的路径转Base64用于防止重复选择
@@ -179,7 +177,7 @@ function _fileIsAdd(_type, _path) {
 		} else {
 			//点击密码弹框取消按钮支持从新选择文件
 			$("#fileuploads").after($("#fileuploads").clone().val("")).remove();
-
+			$("#fileupload").after($("#fileupload").clone().val("")).remove();
 			_off();
 
 			_event();
@@ -410,9 +408,15 @@ function UserCustomDir(opiton) {
 		//自定义路径是否为空，空显示和PDF相同路径
 		if (_path === '') {
 
+			$('#start').attr('data-path', "PDFPATH");
+
 			$('.top-drop-html').html("和PDF相同路径");
 
+			$('.top-drop-html').attr('data-path', '0');
+
 			$('.top-drop-k').html("自定义路径");
+
+			$('.top-drop-k').attr('data-path', '1');
 
 			$('.drop-path').addClass('none');
 		}
@@ -836,7 +840,9 @@ function _event() {
 			} catch (err) {}
 		} else {
 
-			$('.drop-path').addClass('none');
+			$('.drop-path').addClass('none').html('');
+
+			$('#start').attr('data-path', "PDFPATH");
 
 			$(e.target).attr('data-path', '1');
 		}
@@ -981,7 +987,7 @@ function _event() {
 		    convertType = void 0,
 		    conversionIsOk = void 0;
 
-		//判断保存文件是在自定路径还是相同路径"file_custom" false 相同路径 "file_custom" true 自定义路径
+		//保存文件路径
 		var path = $(e.target).attr('data-path');
 
 		//输出文件格式 convertType = "0" 输出RTF, convertType="1" 输出DOCX 
@@ -1079,7 +1085,7 @@ function _event() {
 		if (success === 'true') {
 
 			try {
-				window.external.OpenFileDir(path);
+				window.external.OpenFileDir(_path);
 			} catch (err) {}
 		}
 	});
