@@ -1317,6 +1317,8 @@ function _off() {
 
 	$('.open-text').off();
 
+	$('.open-folder').off();
+
 	$('.minimize').off();
 
 	$('.delete').off();
