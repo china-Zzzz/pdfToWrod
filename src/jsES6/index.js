@@ -446,6 +446,10 @@ function UserCustomDir(opiton){
 	let html = $('.top-drop-k').html();
 
 	let _html = $('.top-drop-html').html();
+	//兼容ie7 8 去空格
+	String.prototype.trim = function(){    
+        return this.replace(/(^\s*)|(\s*$)/g, "");    
+    }
 
 	let _path = $('.drop-path').html().trim();
 

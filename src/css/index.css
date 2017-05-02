@@ -65,6 +65,7 @@ header {
   float: left;
   display: block;
   margin-top:7px;
+  *line-height: 17px;
 }
 .header-right .miniDown {
   margin-top: 1px;
@@ -118,6 +119,7 @@ header {
   position: absolute;
   right: 152px;
   padding: 0 4px 4px;
+  *width: 80px;
   cursor: pointer;
 }
 .land:hover {
@@ -126,7 +128,9 @@ header {
 .land p {
   float: left;
   width: 40px\9;
+  *width: 40px;
   margin: 6px 2px 0 7px;
+  *margin: -15px 2px 0 7px;
   color: #fff;
   font-size: 12px;
   max-width: 40px;
@@ -142,7 +146,7 @@ header {
 .land img {
   float: left;
   display: block;
-  margin-top: 2px;
+  margin-top: 4px;
   width: 24px;
   height: 24px;
 }
@@ -464,6 +468,7 @@ section {
   display: block;
   float: left;
   margin: 9px 2px 0 22px;
+  *margin: 1px 2px 0 22px;
 }
 #foot {
   width: 100%;
@@ -817,7 +822,7 @@ section {
   top: 16px;
   left: 12px;
   *top: 15px;
-  *left: -59px
+  *left: 2px;
 }
 #drag {
   top: -56px;

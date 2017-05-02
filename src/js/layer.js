@@ -222,6 +222,32 @@ function _paymentTem(data) {
 	_event();
 }
 /**
+ * 禁止刷新屏蔽右键
+ */
+document.onkeydown = function (e) {
+
+	var ev = window.event || e;
+
+	var code = ev.keyCode || ev.which;
+
+	if (code == 116) {
+
+		if (ev.preventDefault) {
+
+			ev.preventDefault();
+		} else {
+
+			ev.keyCode = 0;
+
+			ev.returnValue = false;
+		}
+	}
+	//屏蔽鼠标右键
+	$(document).bind("contextmenu", function (e) {
+		return false;
+	});
+};
+/**
  * url获取参数
  */
 function GetQueryString(name) {

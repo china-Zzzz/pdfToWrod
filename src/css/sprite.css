@@ -24,7 +24,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-u107 {
   background-image: url(../img/sprite.png);
-  background-position: -1000px -174px;
+  background-position: -1012px -174px;
   width: 12px;
   height: 12px;
 }
@@ -42,7 +42,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-u152 {
   background-image: url(../img/sprite.png);
-  background-position: -886px -174px;
+  background-position: -870px -174px;
   width: 16px;
   height: 16px;
 }
@@ -168,9 +168,9 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-u698 {
   background-image: url(../img/sprite.png);
-  background-position: -838px -174px;
-  width: 16px;
-  height: 16px;
+  background-position: -1000px -174px;
+  width: 12px;
+  height: 12px;
 }
 .icon-u7 {
   background-image: url(../img/sprite.png);
@@ -201,6 +201,12 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
   background-position: -1488px -138px;
   width: 26px;
   height: 20px;
+}
+.icon-u748 {
+  background-image: url(../img/sprite.png);
+  background-position: -886px -174px;
+  width: 16px;
+  height: 16px;
 }
 .icon-u758 {
   background-image: url(../img/sprite.png);
@@ -234,7 +240,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-u9 {
   background-image: url(../img/sprite.png);
-  background-position: -870px -174px;
+  background-position: -838px -174px;
   width: 16px;
   height: 16px;
 }
@@ -246,7 +252,7 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-u924 {
   background-image: url(../img/sprite.png);
-  background-position: -1012px -174px;
+  background-position: -1024px -174px;
   width: 16px;
   height: 9px;
 }

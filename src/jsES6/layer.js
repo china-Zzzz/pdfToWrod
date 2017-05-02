@@ -242,6 +242,34 @@ function _paymentTem(data){
 
 }
 /**
+ * 禁止刷新屏蔽右键
+ */
+document.onkeydown = function (e) {
+
+	let ev = window.event || e;
+
+	let code = ev.keyCode || ev.which;
+
+	if (code == 116) {
+
+		if(ev.preventDefault) {
+
+			ev.preventDefault();
+
+		} else {
+
+		ev.keyCode = 0;
+
+		ev.returnValue = false;
+
+		}
+	}
+	//屏蔽鼠标右键
+	$(document).bind("contextmenu",(e) =>{   
+	        return false;      
+	})
+}
+/**
  * url获取参数
  */
 function GetQueryString(name){
