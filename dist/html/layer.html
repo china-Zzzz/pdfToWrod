@@ -6,13 +6,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="renderer" content="webkit">
 <title>PDF转WORD弹框</title>
-<link rel="stylesheet" href="../css/layer-a9d32ef8d6.css"/>
+<link rel="stylesheet" href="../css/layer-9d4324f37e.css"/>
 </head>
 <!--[if lt IE 9]>
 <script src="../js/html5.js"></script>
 <script src="../js/json.js"></script>
 <![endif]-->
-<body scroll="no">
+<body scroll="no" onselectstart="return false;">
   <div id="body">
     
   </div>
@@ -59,11 +59,11 @@
       </div>
       {{# if this.isScroll}}
       <div class="am-progress am-progress-sm am-active " id="progress1">
-        <div class="am-progress-bar" id="pro" style="{{this.data.progress.color}}; {{this.data.width}}"></div>
+        <div class="am-progress-bar" id="pro" style="{{this.data.progress.color}};"></div>
       </div>
       {{else}}
       <div class="am-progress am-progress-sm am-active " id="progress1">
-        <div class="am-progress-b" id="pro" style="{{this.data.progress.color}}; {{this.data.width}}"></div>
+        <div class="am-progress-b" id="pro" style="{{this.data.progress.color}};"></div>
       </div>
       {{/if}}
       {{else}}
@@ -96,7 +96,8 @@
     </header>
     <section>
       <div class="password-p">
-        <p>{{this.text}}是加密文档，需要输入密码进行转换</p>
+        <p class="password-p-t" title="{{this.text}}">{{this.text}}</p>
+        <p>是加密文档，需要输入密码进行转换</p>
       </div>
       <div class="password-input">
         <label>
@@ -189,5 +190,5 @@
 <script src="../js/jquery.js"></script>
 <script src="../js/handlebars-1c9a1eb5db.js"></script>
 <script src="../js/b64.js"></script>
-<script src="../js/layer-d4b97e29de.js"></script>
+<script src="../js/layer-2fbfddeca7.js"></script>
 </html>

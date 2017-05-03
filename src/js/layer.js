@@ -5,7 +5,7 @@
  */
 function setParam(data) {
 	//弹框类型（“1” 普通弹框， “2” 进度条弹框，“3” 支付弹框 ）
-	//var data = Base64.decode(JSON.stringify(GetQueryString('json')))
+	var data = Base64.decode(JSON.stringify(GetQueryString('json')));
 	var _data = JSON.parse(data);
 
 	if (_data.type === "1") {
@@ -222,32 +222,6 @@ function _paymentTem(data) {
 	_event();
 }
 /**
- * 禁止刷新屏蔽右键
- */
-document.onkeydown = function (e) {
-
-	var ev = window.event || e;
-
-	var code = ev.keyCode || ev.which;
-
-	if (code == 116) {
-
-		if (ev.preventDefault) {
-
-			ev.preventDefault();
-		} else {
-
-			ev.keyCode = 0;
-
-			ev.returnValue = false;
-		}
-	}
-	//屏蔽鼠标右键
-	$(document).bind("contextmenu", function (e) {
-		return false;
-	});
-};
-/**
  * url获取参数
  */
 function GetQueryString(name) {
@@ -304,6 +278,34 @@ function _css() {
  * 事件绑定
  */
 function _event() {
+
+	/**
+  * 禁止刷新屏蔽右键
+  */
+	document.onkeydown = function (e) {
+
+		var ev = window.event || e;
+
+		var code = ev.keyCode || ev.which;
+
+		if (code == 116) {
+
+			if (ev.preventDefault) {
+
+				ev.preventDefault();
+			} else {
+
+				ev.keyCode = 0;
+
+				ev.returnValue = false;
+			}
+		}
+	};
+
+	//屏蔽鼠标右键
+	$(document).bind("contextmenu", function (e) {
+		return false;
+	});
 
 	//关闭
 	$('.delete').on('mousedown', function (e) {
@@ -612,4 +614,4 @@ function _off() {
 //         }]
 //     }
 // }
-//setParam()
+setParam();

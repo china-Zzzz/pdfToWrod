@@ -16,7 +16,7 @@
 <script src="../js/html5.js"></script>
 <script src="../js/json.js"></script>
 <![endif]-->
-<body scroll="no">
+<body scroll="no" onselectstart="return false;">
   <div id="body">
     
   </div>
@@ -63,11 +63,11 @@
       </div>
       {{# if this.isScroll}}
       <div class="am-progress am-progress-sm am-active " id="progress1">
-        <div class="am-progress-bar" id="pro" style="{{this.data.progress.color}}; {{this.data.width}}"></div>
+        <div class="am-progress-bar" id="pro" style="{{this.data.progress.color}};"></div>
       </div>
       {{else}}
       <div class="am-progress am-progress-sm am-active " id="progress1">
-        <div class="am-progress-b" id="pro" style="{{this.data.progress.color}}; {{this.data.width}}"></div>
+        <div class="am-progress-b" id="pro" style="{{this.data.progress.color}};"></div>
       </div>
       {{/if}}
       {{else}}
@@ -100,7 +100,8 @@
     </header>
     <section>
       <div class="password-p">
-        <p>{{this.text}}是加密文档，需要输入密码进行转换</p>
+        <p class="password-p-t" title="{{this.text}}">{{this.text}}</p>
+        <p>是加密文档，需要输入密码进行转换</p>
       </div>
       <div class="password-input">
         <label>

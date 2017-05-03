@@ -186,14 +186,14 @@ function _fileIsAdd(_type, _path) {
 		}
 	} catch (err) {}
 
+	_path = Base64.encode(_path);
+
 	//防止文件重复选择
 	flieErr = _preventRepeatChoice(_path);
 
 	if (!flieErr) {
 		return false;
 	}
-
-	_path = Base64.encode(_path);
 
 	option = {
 		pages: pages,

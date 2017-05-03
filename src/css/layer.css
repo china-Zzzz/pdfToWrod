@@ -216,6 +216,7 @@ section .download-p p em{
 	padding: 6px 0;
 	border: 1px solid #c5d5e4;
 	padding-left: 10px;
+	float: left;
 }
 .password-input label {
 	float: left;
@@ -280,9 +281,17 @@ footer .buttonHover {
 }
 #pass .password-p {
 	width: 320px;
-	margin: 23px auto 20px;
+	margin: 23px auto 10px;
 	font-size: 13px;
 	color: #ff0000;
+}
+#pass .password-p-t {
+  width: 320px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  height: 20px;
+  line-height: 20px;
 }
 #pass footer {
 	bottom: 20px;
