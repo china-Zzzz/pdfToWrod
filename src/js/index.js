@@ -267,28 +267,31 @@ function getFileName(str) {
  */
 function SetUserInfo(option) {
 
-	$('.header-land').addClass('none');
-
-	$('.land').removeClass('none');
-
 	var _option = JSON.parse(option);
+	//客户端未登陆不进行渲染
+	if (_option.userId !== '') {
 
-	var source = $('#land').html();
+		$('.header-land').addClass('none');
 
-	var template = Handlebars.compile(source);
+		$('.land').removeClass('none');
 
-	var html = template(_option);
+		var source = $('#land').html();
 
-	$('.land').html(html);
+		var template = Handlebars.compile(source);
 
-	//设置默认头像
-	if (_option.headIcon === '') {
-		$('.land img').addClass('icon-u66');
+		var html = template(_option);
+
+		$('.land').html(html);
+
+		//设置默认头像
+		if (_option.headIcon === '') {
+			$('.land img').addClass('icon-u66');
+		}
+
+		_userOff();
+
+		_userEvent();
 	}
-
-	_userOff();
-
-	_userEvent();
 }
 /**
  * 登录信息事件解绑

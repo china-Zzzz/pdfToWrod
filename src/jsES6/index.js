@@ -291,28 +291,32 @@ function getFileName(str){
  */
 function SetUserInfo(option){
 
-	$('.header-land').addClass('none');
-
-	$('.land').removeClass('none');
-
 	let _option = JSON.parse(option);
+	//客户端未登陆不进行渲染
+	if(_option.userId !== ''){
 
-	let source = $('#land').html();
+		$('.header-land').addClass('none');
 
-	let template = Handlebars.compile(source);
+		$('.land').removeClass('none');
 
-	let html = template(_option);
+		let source = $('#land').html();
 
-	$('.land').html(html);
+		let template = Handlebars.compile(source);
 
-	//设置默认头像
-	if(_option.headIcon === ''){
-		$('.land img').addClass('icon-u66');
+		let html = template(_option);
+
+		$('.land').html(html);
+
+		//设置默认头像
+		if(_option.headIcon === ''){
+			$('.land img').addClass('icon-u66');
+		}
+
+		_userOff();
+
+		_userEvent();
+
 	}
-
-	_userOff();
-
-	_userEvent();
 
 }
 /**

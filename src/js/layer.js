@@ -300,12 +300,11 @@ function _event() {
 				ev.returnValue = false;
 			}
 		}
+		//屏蔽鼠标右键
+		$(document).bind("contextmenu", function (e) {
+			return false;
+		});
 	};
-
-	//屏蔽鼠标右键
-	$(document).bind("contextmenu", function (e) {
-		return false;
-	});
 
 	//关闭
 	$('.delete').on('mousedown', function (e) {
