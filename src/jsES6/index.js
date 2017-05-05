@@ -316,6 +316,12 @@ function SetUserInfo(option){
 
 		_userEvent();
 
+	} else {
+
+		$('.header-land').removeClass('none');
+
+		$('.land').addClass('none');
+		
 	}
 
 }

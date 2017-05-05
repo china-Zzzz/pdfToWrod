@@ -291,6 +291,11 @@ function SetUserInfo(option) {
 		_userOff();
 
 		_userEvent();
+	} else {
+
+		$('.header-land').removeClass('none');
+
+		$('.land').addClass('none');
 	}
 }
 /**
