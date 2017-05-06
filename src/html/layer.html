@@ -16,7 +16,7 @@
 <script src="../js/html5.js"></script>
 <script src="../js/json.js"></script>
 <![endif]-->
-<body scroll="no" onselectstart="return false;">
+<body scroll="no">
   <div id="body">
     
   </div>
@@ -33,7 +33,7 @@
         <i class="icon-u1364"></i>
         <div class="section-p">
         {{#each this.text}} 
-          <p>{{this}}</p>
+          <p onselectstart="return false;">{{this}}</p>
         {{/each}}
         </div>
       </div>
@@ -58,7 +58,7 @@
       {{# if this.isProgress}}
       <div class="progress-p">
         {{#each this.data.text}} 
-          <p>{{this}}</p>
+          <p onselectstart="return false;">{{this}}</p>
         {{/each}}
       </div>
       {{# if this.isScroll}}
@@ -77,7 +77,7 @@
         <h3>{{this.data.h3}}</h3>
         <div class="download-p">
           {{#each this.data.p}} 
-          <p><i>*</i><em style="color:{{this.color}}; font-size:{{this.font}}">{{this.text}}</em></p>
+          <p onselectstart="return false;"><i>*</i><em style="color:{{this.color}}; font-size:{{this.font}}">{{this.text}}</em></p>
           {{/each}}
         </div>
       {{/if}}
@@ -100,8 +100,8 @@
     </header>
     <section>
       <div class="password-p">
-        <p class="password-p-t" title="{{this.text}}">{{this.text}}</p>
-        <p>是加密文档，需要输入密码进行转换</p>
+        <p class="password-p-t" title="{{this.text}}" onselectstart="return false;">{{this.text}}</p>
+        <p onselectstart="return false;">是加密文档，需要输入密码进行转换</p>
       </div>
       <div class="password-input">
         <label>
@@ -134,7 +134,7 @@
       <div class="right">
         <div class="section-p">
           {{#each this.text}} 
-              <p>{{this}}</p>
+              <p onselectstart="return false;">{{this}}</p>
           {{/each}}
         </div>
       </div>

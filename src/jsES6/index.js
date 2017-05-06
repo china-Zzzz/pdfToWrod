@@ -4,6 +4,8 @@ var scrollbarOK = false;
 //存储选择后文件的路径转Base64用于防止重复选择
 var filesArr = [];
 const regular = /^([^\`\+\~\!\#\$\%\^\&\*\(\)\|\}\{\=\"\'\！\￥\……\（\）\——]*[\+\~\!\#\$\%\^\&\*\(\)\|\}\{\=\"\'\`\！\?\:\<\>\•\“\”\；\‘\‘\〈\ 〉\￥\……\（\）\——\｛\｝\【\】\\\/\;\：\？\《\》\。\，\、\[\]\,]+.*)$/;
+//兼容ie7的“所有页面”层级遮盖问题
+var index_num = 10000;
 /**
  * 获取文件信息
  * 文件名
@@ -80,7 +82,8 @@ function handleFileSelect(evt) {
 			filePassword:fileOption.password,
 			filePages:fileOption.pages,
 			pages:fileOption._pages,
-			name:name
+			name:name,
+			z_index:"z-index:"+index_num
 		}
 
 		output.push(op);
@@ -321,7 +324,7 @@ function SetUserInfo(option){
 		$('.header-land').removeClass('none');
 
 		$('.land').addClass('none');
-		
+
 	}
 
 }
