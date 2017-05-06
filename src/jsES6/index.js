@@ -37,6 +37,8 @@ function handleFileSelect(evt) {
 	
 	if(ieVersionSix || ieVersionSeven || ieVersionEight || ieVersionNine){
 
+		index_num--
+
 		xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
 
 		_path = evt.target.value;
