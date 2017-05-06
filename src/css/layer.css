@@ -157,6 +157,11 @@ section p {
     font-size: 13px;
     color: #5E5E5E;
     height: 18px;
+    line-height: 18px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+    width: 220px;
 }
 section .progress-p {
 	width: 320px;
