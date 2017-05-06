@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="renderer" content="webkit">
 <title>PDF转WORD</title>
-<link rel="stylesheet" href="../css/index-cffb1b7c7a.css"/>
+<link rel="stylesheet" href="../css/index-fb620ef7a9.css"/>
 
 </head>
 <!--[if lt IE 9]>
@@ -295,12 +295,16 @@
 <!-- 登录 -->
 <script id="land" type="text/x-handlebars-template">
   <i class="icon-u677"></i>
+  {{#if this.headIcon}}
   <img id="img" src="{{this.headIcon}}">
+  {{else}}
+  <div class="img"></div>
+  {{/if}}
   <p title="{{this.nickName}}">{{this.nickName}}</p>
 </script>
 <script src="../js/jquery.js"></script>
 <script src="../js/handlebars-1c9a1eb5db.js"></script>
 <script src="../js/b64.js"></script>
 <script src="../js/drag.js"></script>
-<script src="../js/index-34b22dee56.js"></script>
+<script src="../js/index-86f513b556.js"></script>
 </html>

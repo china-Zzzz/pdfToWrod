@@ -290,7 +290,7 @@ function SetUserInfo(option) {
 
 		//设置默认头像
 		if (_option.headIcon === '') {
-			$('.land img').addClass('icon-u66');
+			$('.land .img').addClass('icon-u66');
 		}
 
 		_userOff();

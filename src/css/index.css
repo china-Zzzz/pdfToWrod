@@ -143,7 +143,7 @@ header {
   float: right;
   margin-top: 8px;
 }
-.land img {
+.land img,.land .img {
   float: left;
   display: block;
   margin-top: 4px;
@@ -168,7 +168,7 @@ header {
   top: 38px;
   z-index: 9999999;
   background: #fdfdfd;
-  *border: 1px solid #666;
+  border: 1px solid #666;
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
@@ -182,7 +182,7 @@ header {
   top: 38px;
   z-index: 9999999;
   background: #fdfdfd;
-  *border: 1px solid #666;
+  border: 1px solid #666;
   -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
@@ -292,7 +292,7 @@ section {
   color: #5E5E5E;
   font-size: 12px;
   font-weight: 400;
-  border-bottom: 1px solid #f2f2f2;
+  *border-bottom: 1px solid #f2f2f2;
 }
 #table table td .none {
   display: none;
@@ -831,6 +831,7 @@ section {
   left: 2px\9;
   *top: 15px;
   *left: 2px;
+  *position: all;
 }
 @media all and (min-width:0) { 
   #progress1{ 

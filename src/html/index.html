@@ -299,7 +299,11 @@
 <!-- 登录 -->
 <script id="land" type="text/x-handlebars-template">
   <i class="icon-u677"></i>
+  {{#if this.headIcon}}
   <img id="img" src="{{this.headIcon}}">
+  {{else}}
+  <div class="img"></div>
+  {{/if}}
   <p title="{{this.nickName}}">{{this.nickName}}</p>
 </script>
 <script src="../js/jquery.js"></script>
