@@ -8,6 +8,8 @@ var filesArr = [];
 var regular = /^([^\`\+\~\!\#\$\%\^\&\*\(\)\|\}\{\=\"\'\！\￥\……\（\）\——]*[\+\~\!\#\$\%\^\&\*\(\)\|\}\{\=\"\'\`\！\?\:\<\>\•\“\”\；\‘\‘\〈\ 〉\￥\……\（\）\——\｛\｝\【\】\\\/\;\：\？\《\》\。\，\、\[\]\,]+.*)$/;
 //兼容ie7的“所有页面”层级遮盖问题
 var index_num = 10000;
+//文件总数对比参数
+var _PageCountNum = 0;
 /**
  * 获取文件信息
  * 文件名
@@ -788,8 +790,18 @@ function _scrollUpdate() {
 	$('.thumb').height(scrollHeight);
 }
 /**
- * 
+ * 获取文件上传最大文件页数的总页数
+ * @return {[pageNum]} 转换完的单位
  */
+function _maxPageCount(num) {
+
+	if (num > _PageCountNum) {
+
+		_PageCountNum = num;
+	}
+
+	return _PageCountNum;
+}
 /**
  * 拖拽框显示
  */
@@ -1010,7 +1022,8 @@ function _event() {
 		    password = void 0,
 		    convertRange = void 0,
 		    convertType = void 0,
-		    conversionIsOk = void 0;
+		    conversionIsOk = void 0,
+		    maxPageCount = void 0;
 
 		//保存文件路径
 		var path = $(e.target).attr('data-path');
@@ -1034,10 +1047,15 @@ function _event() {
 				password = obj[i].getAttribute('data-password');
 				//文件页数
 				convertRange = obj[i].getAttribute('data-pages');
+				//文件总页数
+				pageCount = obj[i].getAttribute('data-pageCount');
 
-				data = { fileName: fileName, fileSize: fileSize, filePath: filePath, password: password, convertRange: convertRange };
+				data = { fileName: fileName, fileSize: fileSize, filePath: filePath, password: password, convertRange: convertRange, pageCount: pageCount };
 
 				arr.push(data);
+
+				//获取文件上传最大文件页数的总页数
+				maxPageCount = _maxPageCount(pageCount);
 			}
 
 			option = {
@@ -1049,7 +1067,7 @@ function _event() {
 			option = Base64.encode(JSON.stringify(option));
 
 			try {
-				conversionIsOk = window.external.StartPDF2WORD(option);
+				conversionIsOk = window.external.StartPDF2WORD(option, maxPageCount);
 			} catch (err) {}
 			//是否可以转换，conversionIsOk = "true" 可以转换（执行样式控制）conversionIsOk = "false" 不可以转换
 			if (conversionIsOk === "true") {
