@@ -795,7 +795,7 @@ function _scrollUpdate() {
  */
 function _maxPageCount(num) {
 
-	if (num > _PageCountNum) {
+	if (Number(num) > Number(_PageCountNum)) {
 
 		_PageCountNum = num;
 	}
