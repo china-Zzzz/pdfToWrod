@@ -507,7 +507,7 @@ function SetConvertProgress(option) {
 
 	_open.nextAll('.tr-delete').find('.open-folder').addClass('none');
 
-	_open.find('.success').addClass('none').end().find('.am-progress').removeClass('none').end().find('.am-progress-bar').css('width', num).end();
+	_open.find('.state').addClass('none').end().find('.am-progress').removeClass('none').end().find('.am-progress-bar').css('width', num).end();
 }
 /**
  * 转换成功／转换失败样式操作
