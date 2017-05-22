@@ -573,6 +573,7 @@ section {
   top: 15px;
   right: 14px;
   border-radius: 100px;
+  outline: none;
 }
 .file {
   overflow: hidden;

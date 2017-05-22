@@ -171,8 +171,8 @@ function _fileIsAdd(_type, _path){
 		option
 
 	if(_type !== 'pdf'){
-
-		alert('不支持除pdf文件')
+		//type="1"的普通信息框接口
+		window.external.ShowMessage('不支持除pdf文件');
 
 		return false;
 	}
