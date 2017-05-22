@@ -621,6 +621,8 @@ function _changeCss(path, _path, $state){
  	_tr.find('.am-progress')
     	.addClass('none')
     .end()
+    	.find('.state').addClass('none');
+    .end()
     	.find('.tr-delete-r').removeClass('none')
     .end()
     	.find('.range').addClass('range-on')
