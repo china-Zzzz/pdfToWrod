@@ -568,7 +568,7 @@ function SetConvertProgress(option){
 
 	_open.nextAll('.tr-delete').find('.open-folder').addClass('none');
 
-	_open.find('.success')
+	_open.find('.state')
 		.addClass('none')
 	.end()
 		.find('.am-progress').removeClass('none')
@@ -620,8 +620,6 @@ function _changeCss(path, _path, $state){
 
  	_tr.find('.am-progress')
     	.addClass('none')
-    .end()
-    	.find('.state').addClass('none');
     .end()
     	.find('.tr-delete-r').removeClass('none')
     .end()
