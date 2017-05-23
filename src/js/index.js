@@ -539,7 +539,7 @@ function _changeCss(path, _path, $state) {
 		_tr.find('.open-text').attr('data-success', 'true').removeClass('none').attr('data-int', _int).end().find('.open-folder').attr('data-success', 'true').removeClass('none').end();
 	} else {
 
-		_tr.find('.success').addClass('none');
+		_tr.find('.success').addClass('none').end().find('.open-text').addClass('none').end().find('.open-folder').addClass('none').end();
 	}
 
 	_tr.find('.am-progress').addClass('none').end().find('.tr-delete-r').removeClass('none').end().find('.range').addClass('range-on').removeClass('Not-allowed').end().find('.checkbox').removeClass('checkbox-on').end().find($state).removeClass('none').end().find('.am-progress-bar').css('width', 0).end();

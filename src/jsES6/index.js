@@ -614,8 +614,12 @@ function _changeCss(path, _path, $state){
     	.end()
  	} else {
 
- 		_tr.find('.success').addClass('none');
-
+ 		_tr.find('.success').addClass('none')
+ 		.end()
+ 			.find('.open-text').addClass('none')
+ 		.end()
+ 			.find('.open-folder').addClass('none')
+ 		.end()
  	}
 
  	_tr.find('.am-progress')
