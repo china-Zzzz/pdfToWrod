@@ -266,7 +266,7 @@ function _css(){
 
 	$('.footer-button').width(_width*length+20);
 
-	$('footer').css("margin-left",-((_width*length+20)/2+10));
+	$('footer').css("margin-left",-((_width*length+20)/2+5));
 
 	$('.top').css('margin-left',-($width/2))
 
