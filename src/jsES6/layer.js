@@ -3,7 +3,7 @@
  */
 function setParam(data){
 	//弹框类型（“1” 普通弹框， “2” 进度条弹框，“3” 支付弹框 ）
-	//var data = Base64.decode(JSON.stringify(GetQueryString('json')))
+	var data = Base64.decode(JSON.stringify(GetQueryString('json')))
 	var _data = JSON.parse(data);
 
 	if(_data.type === "1"){
@@ -264,10 +264,6 @@ function _css(){
 
 	var _height = $('.section-p').outerHeight();
 
-	$('.footer-button').width(_width*length+20);
-
-	$('footer').css("margin-left",-((_width*length+20)/2+5));
-
 	$('.top').css('margin-left',-($width/2))
 
 	$('.top').css('left','50%');
@@ -285,13 +281,19 @@ function _css(){
 
 		$('footer').css('bottom','42px');
 
+		$('footer').css("margin-left",-((_width*length+20)/2));
+
 	} else if(_length === 2){
 
 		$('.section-p').css('margin-top','4px')
+
+		$('footer').css("margin-left",-((_width*length+20)/2+5));
  
 	} else if(_length === 3){
 
 		$('.section-p').css('margin-top','0px')
+
+		$('footer').css("margin-left",-((_width*length+20)/2+5));
 
 	}
 
@@ -695,4 +697,4 @@ function _off(){
 //         }]
 //     }
 // }
-//setParam()
+setParam()

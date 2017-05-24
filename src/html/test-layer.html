@@ -54,6 +54,9 @@
   <button class="test" data-type="data13">
     不支持除pdf文件
   </button>
+  <button class="test" data-type="data14">
+    三台验证
+  </button>
 </body>
 <script src="../js/jquery.js"></script>
 <script src="../js/b64.js"></script>
@@ -289,6 +292,23 @@ var data13 = {
     }
 }
 
+var data14 = {
+    "type":"1",//弹框类型（"1" 普通弹框， "2" 进度条弹框，"3" 支付弹框 , "4"密码弹框）
+    "option":{
+        "title":"提示",//title名
+        "text":["抱歉，该账绑定的电脑超过3","台,请用其他账号登陆"],//弹框内容
+        "button":[{
+            "text":'只转5页',//按钮名称
+            "background-color":"not",//按钮颜色
+            "type":"fivePage"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        },{
+            "text":'确定',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"delete"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
+
   $('.test').on('click',function(e){
     var isOk = $(e.target).attr('data-type');
     if(isOk === 'data'){
@@ -319,6 +339,8 @@ var data13 = {
       _data = Base64.encode(JSON.stringify(data12))
     }else if(isOk === 'data13'){
       _data = Base64.encode(JSON.stringify(data13))
+    }else if(isOk === 'data14'){
+      _data = Base64.encode(JSON.stringify(data14))
     }
     window.open("./layer.html?json="+_data)
 

@@ -136,7 +136,7 @@ section {
 }
 section .top .section-p {
 	float: left;
-	margin-left: 15px;
+	margin-left: 11px;
 	display: inline-block;
 }
 #ordinary section .top i{
@@ -318,10 +318,10 @@ footer .member, footer .download{
 	padding: 3px 10px;
 }
 footer .fivePage{
-	padding: 3px 12px;
+	padding: 2px 12px;
 }
 footer .payment {
-	padding: 3px 10px;
+	padding: 2px 10px;
 }
 footer .update {
 	padding: 2px 10px;
