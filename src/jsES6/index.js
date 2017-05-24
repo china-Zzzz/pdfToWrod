@@ -168,9 +168,13 @@ function _fileIsAdd(_type, _path){
 		flieErr,
 		pagesPassword,
 		password,
-		option
+		option,
+		type
 
-	if(_type !== 'pdf'){
+	//大写转换成小写
+	type = _type.toLowerCase( );
+
+	if(type !== 'pdf'){
 		//type="1"的普通信息框接口
 		window.external.ShowMessage('不支持除pdf文件');
 
@@ -1493,7 +1497,7 @@ function _event(){
 		let _pass = $(e.target).attr('data-password');
 
 		let path = $(e.target).attr('data-filePath');
-
+		//总页数
 		let pageCount = $(e.target).attr('data-pageCount');
 
 		let option = `${_path},${_pass}`;
