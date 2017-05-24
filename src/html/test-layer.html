@@ -51,6 +51,9 @@
   <button class="test" data-type="data12">
     密码输入
   </button>
+  <button class="test" data-type="data13">
+    不支持除pdf文件
+  </button>
 </body>
 <script src="../js/jquery.js"></script>
 <script src="../js/b64.js"></script>
@@ -273,6 +276,18 @@ var data12 = {
         }]
  }
 }
+var data13 = {
+    "type":"1",//弹框类型（"1" 普通弹框， "2" 进度条弹框，"3" 支付弹框 , "4"密码弹框）
+    "option":{
+        "title":"提示",//title名
+        "text":["不支持除pdf文件"],//弹框内容
+        "button":[{
+            "text":'确定',//按钮名称
+            "background-color":"ok",//按钮颜色
+            "type":"found"//按钮类型（delete”取消“(确定按钮也是关闭弹框的效果直接配置delete)，update"是否升级更新",found"创建桌面快捷方式"，member"升级会员",land"登陆"）
+        }]
+    }
+}
 
   $('.test').on('click',function(e){
     var isOk = $(e.target).attr('data-type');
@@ -302,6 +317,8 @@ var data12 = {
       _data = Base64.encode(JSON.stringify(data11))
     }else if(isOk === 'data12'){
       _data = Base64.encode(JSON.stringify(data12))
+    }else if(isOk === 'data13'){
+      _data = Base64.encode(JSON.stringify(data13))
     }
     window.open("./layer.html?json="+_data)
 

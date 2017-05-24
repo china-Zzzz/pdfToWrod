@@ -252,16 +252,13 @@ function _css() {
 
 	$('.top').css('left', '50%');
 
-	if (length === 1) {
+	if (_length === 1) {
 
 		//ie7
 		if (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE7.0") {
 
 			$('footer').css("margin-left", -((_width * length + 20) / 2) - 55);
 		}
-	}
-
-	if (_length === 1) {
 
 		$('.section-p').css('margin-top', '11px');
 
@@ -273,6 +270,13 @@ function _css() {
 
 		$('.section-p').css('margin-top', '0px');
 	}
+}
+/**
+ * 回车执行确认事件（客户端掉用）
+ */
+function KeyDown() {
+
+	$('.ok').mousedown();
 }
 /**
  * 事件绑定
@@ -374,14 +378,6 @@ function _event() {
 		try {
 			window.external.SetConvertPage(num);
 		} catch (err) {}
-	});
-	//回车执行确认事件
-	$('body').keydown(function (e) {
-
-		if (e.keyCode == 13) {
-
-			$('.ok').mousedown();
-		}
 	});
 }
 /**
