@@ -57,6 +57,9 @@
   <button class="test" data-type="data14">
     三台验证
   </button>
+  <button class="test" data-type="data15">
+    文件损坏
+  </button>
 </body>
 <script src="../js/jquery.js"></script>
 <script src="../js/b64.js"></script>
@@ -309,6 +312,19 @@ var data14 = {
     }
 }
 
+var data15 = {
+ "type":"1",
+ "option":{
+   "title":'输入密码',
+   "text":["创建桌面快捷方式，下次从桌面直sdfdsfdfdsfdsfdsfsdfdsfsdf","接双击打开福昕PDF转Word","接双击打开福昕PDF转Word"],//弹框内容
+   "button":[{
+         "text":"确定",
+        "background-color":"ok",//按钮颜色
+         "type":"password"
+        }]
+ }
+}
+
   $('.test').on('click',function(e){
     var isOk = $(e.target).attr('data-type');
     if(isOk === 'data'){
@@ -341,6 +357,8 @@ var data14 = {
       _data = Base64.encode(JSON.stringify(data13))
     }else if(isOk === 'data14'){
       _data = Base64.encode(JSON.stringify(data14))
+    }else if(isOk === 'data15'){
+      _data = Base64.encode(JSON.stringify(data15))
     }
     window.open("./layer.html?json="+_data)
 

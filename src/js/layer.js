@@ -5,7 +5,7 @@
  */
 function setParam(data) {
 	//弹框类型（“1” 普通弹框， “2” 进度条弹框，“3” 支付弹框 ）
-	var data = Base64.decode(JSON.stringify(GetQueryString('json')));
+	//var data = Base64.decode(JSON.stringify(GetQueryString('json')))
 	var _data = JSON.parse(data);
 
 	if (_data.type === "1") {
@@ -248,24 +248,28 @@ function _css() {
 
 	$('.top').css('left', '50%');
 
-	if (_length === 1) {
+	if (length === 1) {
+
+		$('footer').css("margin-left", -((_width * length + 20) / 2));
 
 		//ie7
 		if (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE7.0") {
 
 			$('footer').css("margin-left", -((_width * length + 20) / 2) - 55);
 		}
+	} else if (length === 2) {
+
+		$('footer').css("margin-left", -((_width * length + 20) / 2 + 5));
+	}
+
+	if (_length === 1) {
 
 		$('.section-p').css('margin-top', '11px');
 
 		$('footer').css('bottom', '42px');
-
-		$('footer').css("margin-left", -((_width * length + 20) / 2));
 	} else if (_length === 2) {
 
 		$('.section-p').css('margin-top', '4px');
-
-		$('footer').css("margin-left", -((_width * length + 20) / 2 + 5));
 	} else if (_length === 3) {
 
 		$('.section-p').css('margin-top', '0px');
@@ -619,4 +623,4 @@ function _off() {
 //         }]
 //     }
 // }
-setParam();
+//setParam()
