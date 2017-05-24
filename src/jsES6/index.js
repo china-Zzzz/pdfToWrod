@@ -1494,11 +1494,13 @@ function _event(){
 
 		let path = $(e.target).attr('data-filePath');
 
+		let pageCount = $(e.target).attr('data-pageCount');
+
 		let option = `${_path},${_pass}`;
 
 		try
 		{
-		   let pages = window.external.ChangeConvertPage(_path);
+		   let pages = window.external.ChangeConvertPage(_path, pageCount);
 		   //转换页数弹框点击取消按钮不改变输入框值
 		   if(pages !== ''){
 

@@ -1236,10 +1236,12 @@ function _event() {
 
 		var path = $(e.target).attr('data-filePath');
 
+		var pageCount = $(e.target).attr('data-pageCount');
+
 		var option = _path + "," + _pass;
 
 		try {
-			var pages = window.external.ChangeConvertPage(_path);
+			var pages = window.external.ChangeConvertPage(_path, pageCount);
 			//转换页数弹框点击取消按钮不改变输入框值
 			if (pages !== '') {
 

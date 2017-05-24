@@ -375,6 +375,14 @@ function _event() {
 			window.external.SetConvertPage(num);
 		} catch (err) {}
 	});
+	//回车执行确认事件
+	$('body').keydown(function (e) {
+
+		if (e.keyCode == 13) {
+
+			$('.ok').mousedown();
+		}
+	});
 }
 /**
  * 事件解除绑定
