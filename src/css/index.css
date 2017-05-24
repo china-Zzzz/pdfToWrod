@@ -45,9 +45,6 @@ header {
 .header-right ul li:hover {
   background: #FAA175;
 }
-.header-right ul li:active {
-  background: #FBB898;
-}
 .header-right ul .delete:hover {
   background: #fa3929;
 }
