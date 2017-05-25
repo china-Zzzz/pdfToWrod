@@ -1211,6 +1211,9 @@ function _event(){
 		//输出文件格式 convertType = "0" 输出RTF, convertType="1" 输出DOCX 
 		convertType = $(e.target).attr('data-int');
 
+		//初始化文件总数
+		_PageCountNum = 0;
+
 		if(obj.length !== 0 && file_num === 0){
 
 			for(let i = 0, max = obj.length; i < max; i++){
