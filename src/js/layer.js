@@ -266,7 +266,7 @@ function _css() {
 
 		$('.section-p').css('margin-top', '11px');
 
-		$('footer').css('bottom', '42px');
+		$('footer').css('bottom', '48px');
 	} else if (_length === 2) {
 
 		$('.section-p').css('margin-top', '4px');
