@@ -52,7 +52,7 @@ function _template(data) {
  */
 function _restart(data) {
 
-	var source = $('#template').html();
+	var source = $('#restart').html();
 
 	var template = Handlebars.compile(source);
 
