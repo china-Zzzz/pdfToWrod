@@ -191,6 +191,30 @@
     </footer>
   </div>
 </script>
+<!-- 重启 -->
+<script id="restart" type="text/x-handlebars-template">
+  <div id="ordinary">
+    <header>
+    </header>
+    <section>
+      <div class="top">
+        <i class="icon-u1364"></i>
+        <div class="section-p">
+        {{#each this.text}} 
+          <p title="{{this}}" onselectstart="return false;">{{this}}</p>
+        {{/each}}
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-button">
+        {{#each this.button}} 
+          <div class="button {{this.type}} {{this.background-color}}">{{this.text}}</div>
+        {{/each}}
+      </div>
+    </footer>
+  </div>
+</script>
 <script src="../js/jquery.js"></script>
 <script src="../js/handlebars-1c9a1eb5db.js"></script>
 <script src="../js/b64.js"></script>

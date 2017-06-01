@@ -20,6 +20,9 @@ function setParam(data) {
 	} else if (_data.type === '4') {
 
 		_passwordTem(_data.option);
+	}else if (_data.type === '5') {
+
+		_restart(_data.option);
 	} else {
 
 		_pagesTem(_data.option);
@@ -29,6 +32,25 @@ function setParam(data) {
  * 普通模版
  */
 function _template(data) {
+
+	var source = $('#template').html();
+
+	var template = Handlebars.compile(source);
+
+	var html = template(data);
+
+	$('#body').html(html);
+
+	_css();
+
+	_off();
+
+	_event();
+}
+/**
+ * 重启模版
+ */
+function _restart(data) {
 
 	var source = $('#template').html();
 
