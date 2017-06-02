@@ -1185,7 +1185,7 @@ function _event() {
 	$('.open-url').on('mousedown', function () {
 
 		try {
-			window.external.OpenUrl("http://pdftoword.foxitreader.cn/");
+			window.external.OpenUrl("http://pdftoword.foxitreader.cn/index?agent=FP2W");
 		} catch (err) {}
 	});
 	//下拉列表
