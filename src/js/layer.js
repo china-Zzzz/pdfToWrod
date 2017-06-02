@@ -5,7 +5,7 @@
  */
 function setParam(data) {
 	//弹框类型（“1” 普通弹框， “2” 进度条弹框，“3” 支付弹框 ）
-	//var data = Base64.decode(JSON.stringify(GetQueryString('json')))
+	var data = Base64.decode(JSON.stringify(GetQueryString('json')))
 	var _data = JSON.parse(data);
 
 	if (_data.type === "1") {
@@ -23,7 +23,7 @@ function setParam(data) {
 	}else if (_data.type === '5') {
 
 		_restart(_data.option);
-	} else {
+	} else if (_data.type === '5') {
 
 		_pagesTem(_data.option);
 	}
@@ -425,4 +425,4 @@ function _off() {
 
 	$('.land').off();
 }
-//setParam()
+setParam()
