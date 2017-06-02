@@ -279,7 +279,7 @@ function _css() {
 
 			$('.footer-button').width(_width+10);
 
-			$('footer').css("margin-left", -((_width * length + 20) / 2) - 55);
+			$('footer').css("margin-left", -((_width * length + 20) / 2) - 50);
 		}
 	} else if (length === 2) {
 
