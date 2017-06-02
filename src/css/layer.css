@@ -316,7 +316,7 @@ footer .land{
 	padding: 2px 22px;
 	border: 1px solid #F98953;
 }
-footer .member, footer .download, footer .restart{
+footer .member, footer .download{
 	padding: 3px 10px;
 }
 footer .fivePage{
@@ -328,7 +328,7 @@ footer .payment {
 footer .update {
 	padding: 2px 10px;
 }
-#prog footer .update {
+#prog footer .update, footer .restart {
 	padding: 2px 22px;
 }
 footer .payments {
