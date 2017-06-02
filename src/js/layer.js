@@ -23,7 +23,7 @@ function setParam(data) {
 	}else if (_data.type === '5') {
 
 		_restart(_data.option);
-	} else if (_data.type === '5') {
+	} else if (_data.type === '6') {
 
 		_pagesTem(_data.option);
 	}
@@ -304,7 +304,7 @@ function _css() {
 		$('.section-p').css('margin-top', '4px');
 
 		$('footer').css('bottom', '48px');
-		
+
 	} else if (_length === 3) {
 
 		$('.section-p').css('margin-top', '0px');
