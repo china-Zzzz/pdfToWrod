@@ -1110,6 +1110,7 @@ function _event() {
 		    convertRange = void 0,
 		    convertType = void 0,
 		    conversionIsOk = void 0,
+		    pageCount = void 0,
 		    maxPageCount = void 0;
 
 		//保存文件路径

@@ -1294,6 +1294,7 @@ function _event(){
 			convertRange,
 			convertType,
 			conversionIsOk,
+			pageCount,
 			maxPageCount
 
 		//保存文件路径
