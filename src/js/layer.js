@@ -20,7 +20,7 @@ function setParam(data) {
 	} else if (_data.type === '4') {
 
 		_passwordTem(_data.option);
-	}else if (_data.type === '5') {
+	} else if (_data.type === '5') {
 
 		_restart(_data.option);
 	} else if (_data.type === '6') {
@@ -277,9 +277,9 @@ function _css() {
 		//ie7
 		if (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE7.0") {
 
-			$('.footer-button').width(_width+10);
+			$('.footer-button').width(_width + 10);
 
-			$('footer').css("margin-left", -((_width * length + 20) / 2) - 50);
+			$('footer').css("margin-left", -((_width * length + 20) / 2) - 55);
 		}
 	} else if (length === 2) {
 
@@ -288,9 +288,9 @@ function _css() {
 		//ie7
 		if (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE7.0") {
 
-			$('.footer-button').width(2*(_width+10));
+			$('.footer-button').width(2 * (_width + 10));
 
-			$('footer').css("margin-left", -((_width * length) / 2) - 17);
+			$('footer').css("margin-left", -(_width * length / 2) - 17);
 		}
 	}
 
@@ -304,7 +304,6 @@ function _css() {
 		$('.section-p').css('margin-top', '4px');
 
 		$('footer').css('bottom', '48px');
-
 	} else if (_length === 3) {
 
 		$('.section-p').css('margin-top', '0px');

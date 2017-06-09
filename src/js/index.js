@@ -117,6 +117,11 @@ function handleFileSelect(evt) {
 			_type = name.split('.')[name.split('.').length - 1];
 			//公用部分
 			fileOption = _fileIsAdd(_type, _path);
+
+			//界面大小单位显示MB
+			_size = (f.size / 1000 / 1000).toPrecision(3) + "MB";
+			//传输给客户端文件大小为kb且不带单位
+			sendSize = f.size / 1000;
 			//无法添加文件禁止继续执行
 			if (!fileOption) {
 				continue;
@@ -151,6 +156,83 @@ function handleFileSelect(evt) {
 	}
 }
 /**
+ * 拖拽文件（客户端传人）
+ */
+function fileDrag(option) {
+
+	var _option = JSON.parse(option);
+
+	var op = {},
+	    output = [],
+	    _type = void 0,
+	    _path = void 0,
+	    path = void 0,
+	    _name = void 0,
+	    _pathNoName = void 0,
+	    name = void 0,
+	    _size = void 0,
+	    size = void 0,
+	    sendSize = void 0,
+	    fileOption = void 0;
+
+	//多文件上传只取一次文件路径
+	var fileOK = true;
+
+	for (var i = 0, max = _option.length; i < max; i++) {
+		//文件类型
+		_type = _option[i].fileType;
+		//文件路径
+		_path = _option[i].filePath;
+		//文件大小
+		size = _option[i].fileSize;
+		//文件名称
+		_name = _option[i].fileName;
+		//传输给客户端文件大小为kb且不带单位
+		sendSize = size / 1000;
+		//界面大小单位显示MB
+		_size = (size / 1000 / 1000).toPrecision(3) + "MB";
+
+		if (fileOK) {
+			//根据客户端要求传输的路径为不加文件名称的路径
+			path = _path.split(_name)[0];
+
+			fileOK = false;
+		}
+
+		//公用部分
+		fileOption = _fileIsAdd(_type, _path);
+
+		//特殊字符转换
+		if (regular.test(_name)) {
+
+			name = Base64.encode(_name);
+		}
+
+		//无法添加文件禁止继续执行
+		if (!fileOption) {
+			continue;
+		}
+
+		op = {
+			fileName: _name,
+			fileSize: _size,
+			sendSize: sendSize,
+			filePath: path,
+			fullPath: fileOption._path,
+			filePassword: fileOption.password,
+			filePages: fileOption.pages,
+			pages: fileOption._pages,
+			name: name
+		};
+
+		output.push(op);
+
+		_template(output);
+
+		output = [];
+	}
+}
+/**
  * 文件是否可以添加(可以添加返回 文件页数范围、文件总页数、文件路径转Base64、文件密码)
  */
 function _fileIsAdd(_type, _path) {
@@ -168,8 +250,9 @@ function _fileIsAdd(_type, _path) {
 
 	if (type !== 'pdf') {
 		//type="1"的普通信息框接口
-		window.external.ShowMessage('不支持除pdf文件');
-
+		try {
+			window.external.ShowMessage('不支持除pdf文件');
+		} catch (err) {}
 		return false;
 	}
 
@@ -1385,3 +1468,4 @@ function _off() {
 }
 
 _event();
+fileDrag();
