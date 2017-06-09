@@ -206,6 +206,9 @@ function fileDrag(option) {
 		if (regular.test(_name)) {
 
 			name = Base64.encode(_name);
+		} else {
+
+			name = _option[i].fileName;
 		}
 
 		//无法添加文件禁止继续执行
@@ -1469,4 +1472,3 @@ function _off() {
 }
 
 _event();
-fileDrag();
