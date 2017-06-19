@@ -736,8 +736,8 @@ section {
   margin: 23px 30px 0;
   float: right;
   font-size: 17px;
-  color: #FFFFFF;
-  padding: 10px;
+  color: #FFFFFF;    
+  padding: 7px 10px;
   border-radius: 3px;
   background: #ccc;
   color: #fff;
@@ -749,7 +749,7 @@ section {
   cursor: pointer;
 }
 #foot .isOk {
-  background: #f98953;
+  background: #ff8146;
   cursor: pointer;
   color: #fff;
 }

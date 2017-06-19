@@ -1524,7 +1524,7 @@ function _event(){
 
 		try
 		{
-		   window.external.OpenUrl("http://pdftoword.foxitreader.cn/index?agent=FP2W");
+		   window.external.OpenUrl("http://pdftoword.foxitreader.cn");
 		}
 		catch(err)
 		{
