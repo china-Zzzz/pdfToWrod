@@ -787,7 +787,11 @@ section .dashed {
   float: right;
   font-size: 17px;
   color: #FFFFFF;    
+<<<<<<< HEAD
   padding: 10px;
+=======
+  padding: 7px 10px;
+>>>>>>> c13a6cde4ffdfe085dfff767b185e127bbd340a8
   border-radius: 3px;
   background: #ccc;
   color: #fff;
