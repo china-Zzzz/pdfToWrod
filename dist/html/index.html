@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="renderer" content="webkit">
 <title>PDF转WORD</title>
-<link rel="stylesheet" href="../css/index-11a97e46ec.css"/>
+<link rel="stylesheet" href="../css/index-e4fb76fe57.css"/>
 
 </head>
 <!--[if lt IE 9]>
@@ -180,8 +180,9 @@
       </div>
       <!-- 拖拽窗口 -->
       <div id="drag" class="icon-u999">
+        <div class="dashed"></div>
         <div class="drag-centre" id="drags">
-          单击按钮选择文件进行转换
+          请拖入PDF文件或单击添加文件
           <div class="file-add">
             <i class="icon-u614"></i>
             <input id="fileuploads" hideFocus="true" type="file" name="uploadFile" multiple=""  accept=".pdf">
@@ -259,12 +260,12 @@
       </td>
       <td>
         <div class="range range-on tr-public" data-open="0" data-success="true" data-filePath="{{this.fullPath}}">
-        所有页面
+        <span>所有页面</span>
         <i class="row icon-u106"></i>
         </div>
         <div class="all-drop none">
           <ul>
-            <li class="all none" data-pages="{{this.filePages}}"></li>
+            <li class="all none" data-filePath="{{this.fullPath}}" data-pages="{{this.filePages}}"></li>
             <li class="other" data-path="{{this.filePath}}" data-filePath="{{this.fullPath}}" data-name="{{this.fileName}}" data-password="{{this.filePassword}}" data-pageCount="{{this.pages}}">...</li>
           </ul>
         </div>
@@ -306,5 +307,5 @@
 <script src="../js/handlebars-1c9a1eb5db.js"></script>
 <script src="../js/b64.js"></script>
 <script src="../js/drag.js"></script>
-<script src="../js/index-545c7e0314.js"></script>
+<script src="../js/index-c69976b941.js"></script>
 </html>

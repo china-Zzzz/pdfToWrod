@@ -122,7 +122,6 @@ function handleFileSelect(evt) {
 			_type = (name.split('.'))[name.split('.').length - 1];
 			//公用部分
 			fileOption = _fileIsAdd(_type, _path);
-
 			//界面大小单位显示MB
 			_size = `${(f.size/1000/1000).toPrecision(3)}MB`;
 			//传输给客户端文件大小为kb且不带单位
@@ -131,7 +130,6 @@ function handleFileSelect(evt) {
 			if(!fileOption){
 				continue;
 			}
-
 			//特殊字符转换
 			if(regular.test(name)){
 
@@ -206,10 +204,8 @@ function fileDrag(option){
 
 			fileOK = false;
 		}
-
 		//公用部分
 		fileOption = _fileIsAdd(_type, _path);
-
 		//特殊字符转换
 		if(regular.test(_name)){
 
@@ -220,7 +216,6 @@ function fileDrag(option){
 	    	name = _option[i].fileName;
 
 	    }
-
 		//无法添加文件禁止继续执行
 		if(!fileOption){
 			continue;
@@ -259,7 +254,6 @@ function _fileIsAdd(_type, _path){
 		password,
 		option,
 		type
-
 	//大写转换成小写
 	type = _type.toLowerCase( );
 
@@ -275,7 +269,6 @@ function _fileIsAdd(_type, _path){
 		}
 		return false;
 	}
-
 	//返回文件总页数和密码
 	try
 	{	
@@ -311,7 +304,6 @@ function _fileIsAdd(_type, _path){
 	}
 
 	_path = Base64.encode(_path);
-
 	//防止文件重复选择
 	flieErr = _preventRepeatChoice(_path);
 
@@ -383,11 +375,11 @@ function bytesToSize(bytes) {
  */
 function getFileName(str){
 
- let reg = /[^\\\/]*[\\\/]+/g;
+	let reg = /[^\\\/]*[\\\/]+/g;
 
- str = str.replace(reg,'');
+	str = str.replace(reg,'');
 
- return str;
+	return str;
 
 }
 
@@ -653,11 +645,15 @@ function GetFileSize(size){
  */
 function SetConvertProgress(option){
 
-	let _option = JSON.parse(option);
+	let _option = JSON.parse(option);;
 
 	let num = _option.progress + '%';
+
+	let fivePage = _option.pagerange;
 	//文件路径转换
 	let path = Base64.encode(_option.filepath);
+	//转换页数范围显示
+	$('.range[data-filePath='+'"'+path+'"'+']').find('span').html(pages);
 
 	let _open = $('.open[data-filepath='+'"'+path+'"'+']');
 
@@ -754,7 +750,7 @@ function _changeCss(path, _path, $state){
  }
  /**
  * 文件转换失败接口
- * @param  {[string]} path 客户端传入原始文件路径（后缀为.pdf
+ * @param  {[string]} path 客户端传入原始文件路径（后缀为.pdf)
  */
  function ChangeFail(path){
 
@@ -1524,7 +1520,7 @@ function _event(){
 
 		try
 		{
-		   window.external.OpenUrl("http://pdftoword.foxitreader.cn/index?agent=FP2W");
+		   window.external.OpenUrl("http://pdftoword.foxitreader.cn");
 		}
 		catch(err)
 		{
@@ -1607,10 +1603,10 @@ function _event(){
 		   //转换页数弹框点击取消按钮不改变输入框值
 		   if(pages !== ''){
 
-		   		$('.all').html('所有页面')
+		   		$('.all[data-filePath='+'"'+path+'"'+']').html('所有页面')
 		   				 .removeClass('none');
 
-		   		$('.range[data-filePath='+'"'+path+'"'+']').html(pages);
+		   		$('.range[data-filePath='+'"'+path+'"'+']').find('span').html(pages);
 
 		   		$('.other[data-filePath='+'"'+path+'"'+']').parents('tr').attr('data-pages',pages);
 
@@ -1628,10 +1624,12 @@ function _event(){
 
 		let pages = $(e.target).attr('data-pages');
 
+		let path = $(e.target).attr('data-filePath');
+
 		$(e.target).html('')
 				   .addClass('none')
 
-		$(e.target).parents('.all-drop').prevAll('.range').html('所有页面');
+		$('.range[data-filePath='+'"'+path+'"'+']').find('span').html('所有页面');
 
 		$(e.target).parents('tr').attr('data-pages',pages);
 
@@ -1641,13 +1639,15 @@ function _event(){
 
 	},(e) =>{
 
-		$(e.target).attr('data-open','0')
+		let $range = $(e.target).attr('data-success')?$(e.target):$(e.target).parent();
 
-		$(e.target).nextAll('.all-drop').addClass('none');
+		$range.attr('data-open','0')
 
-		$(e.target).find('.row').removeClass('icon-u107');
+		$range.nextAll('.all-drop').addClass('none');
 
-		$(e.target).removeClass('range-active');
+		$range.find('.row').removeClass('icon-u107');
+
+		$range.removeClass('range-active');
 
 	})
 	$('.all-drop').hover((e) =>{

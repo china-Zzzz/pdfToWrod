@@ -54,7 +54,7 @@ header {
 .header-right .header-icon-land {
   display: block;
   float: left;
-  margin: 0px 4px 0 0;
+  margin: 1px 4px 0 0;
 }
 .header-right .service .a {
   color: #fff;
@@ -73,8 +73,9 @@ header {
 }
 .header-file {
   position: absolute;
-  bottom: 8px;
+  bottom: 0;
   left: 16px;
+  height: 62px;
 }
 .header-file .file-maks {
   width: 114px;
@@ -92,25 +93,29 @@ header {
 .header-file ul li {
   float: left;
   margin-right: 2px;
-  padding: 0px 13px;
-  cursor: pointer;
+  width: 110px;
+  height: 62px;
 }
 .header-file ul li .a {
   display: block;
-  width: 90px;
-  height: 42px;
+  width: 110px;
+  height: 62px;
 }
 .header-file ul li:hover {
-  background: #FAA175;
+  background: url(../img/hover/u555.png);
+  width: 110px;
+  height: 62px;
 }
 .header-file ul li:active {
-  background: #FBB898;
+  background: url(../img/hover/u55.png);
+  width: 110px;
+  height: 62px;
 }
 .header-file .header-icon-land {
   display: block;
   float: left;
   cursor: pointer;
-  margin-top: 11px;
+  margin: 23px 0 0 12px;
 }
 .land {
   position: absolute;
@@ -146,6 +151,7 @@ header {
   margin-top: 4px;
   width: 24px;
   height: 24px;
+  border-radius: 5px;
 }
 .no-land {
   margin-top: 6px;
@@ -159,9 +165,9 @@ header {
 }
 /* 下拉框 */
 #drop {
-  width: 150px;
+  width: 148px;
   position: absolute;
-  right: 0;
+  right: 63px;
   top: 38px;
   z-index: 9999999;
   background: #fdfdfd;
@@ -173,9 +179,9 @@ header {
   padding-bottom: 1px;
 }
 #drops {
-  width: 100px;
+  width: 102px;
   position: absolute;
-  right: 151px;
+  right: 158px;
   top: 38px;
   z-index: 9999999;
   background: #fdfdfd;
@@ -187,8 +193,8 @@ header {
   padding-bottom: 1px;
 }
 #drop li {
-  width: 136px;
-  margin: 1px 2px 0;
+  width: 132px;
+  margin: 1px 3px 0;
   float: left;
   cursor: pointer;
   padding: 2px 5px;
@@ -199,7 +205,7 @@ header {
 }
 #drops li i {
   display: block;
-  margin: 6px 0 0 10px;
+  margin: 0 0 0 10px;
 }
 #drops li {
   width: 97px;
@@ -209,10 +215,46 @@ header {
   padding: 2px 0;
 }
 #drop li:hover, #drops li:hover{
-  background: #e8e8e8;
+  background: #ff9161;
 }
 #drop li:active, #drops li:active{
-  background: #d5d5d5;
+  background: #ff8753;
+}
+#drop li:hover p, #drops li:hover p {
+  color: #fff;
+}
+#drop li:active p, #drops li:active p {
+  color: #fff;
+}
+#drop .shortcut:hover i{
+  background: url(../img/hover/u574.png);
+  width: 20px;
+  height: 20px;
+}
+#drop .update:hover i{
+  background: url(../img/hover/u572.png);
+  width: 20px;
+  height: 20px;
+}
+#drop .aboutUs:hover i{
+  background: url(../img/hover/u576.png);
+  width: 20px;
+  height: 20px;
+}
+#drops .personal:hover i{
+  background: url(../img/hover/u7011.png);
+  width: 20px;
+  height: 20px;
+}
+#drops .drops-update:hover i{
+  background: url(../img/hover/u7031.png);
+  width: 20px;
+  height: 20px;
+}
+#drops .drops-logout:hover i{
+  background: url(../img/hover/u6981.png);
+  width: 20px;
+  height: 20px;
 }
 #drop i,#drops i{
   float: left;
@@ -221,18 +263,24 @@ header {
   float: left;
   font-size: 12px;
   color: #363636;
-  height: 25px;
-  line-height: 25px;
+  height: 24px;
+  line-height: 24px;
   text-align: left;
-  text-indent: 10px;
-}
-#drops .icon-u698{    
-  width: 12px;
-  height: 12px;
+  text-indent: 7px;
 }
 section {
   position: relative;
   height: 445px;
+}
+section .dashed {
+  width: 680px;
+  height: 330px;
+  border: 1px dashed #fff;
+  border-radius: 5px;
+  position: absolute;    
+  top: 59px;
+  left: 50%;
+  margin-left: -340px;
 }
 /* 表格样式 */
 #table table{
@@ -248,16 +296,19 @@ section {
   border-bottom: 1px solid #f2f2f2;
 }
 #table table .tr:hover .icon-u758{
-  background-image: url(../img/sprite.png);
-  background-position: -934px -174px;
+  background: url(../img/hover/u768.png);
+  width: 14px;
+  height: 14px;
 }
 #table table .tr:hover .icon-u772{
-  background-image: url(../img/sprite.png);
-  background-position: -948px -174px;
+  background: url(../img/hover/u770.png);
+  width: 14px;
+  height: 14px;
 }
 #table table .tr:hover .checkbox-on{
-  background-image: url(../img/sprite.png);
-  background-position: -948px -174px;
+  background: url(../img/hover/u770.png);
+  width: 14px;
+  height: 14px;
 }
 #table table tr:hover {
   background: #fbfbfb
@@ -341,16 +392,19 @@ section {
   *margin: 5px 0 0 8px;
 }
 #table .top-table .icon-u758:hover{
-  background-image: url(../img/sprite.png);
-  background-position: -934px -174px;
+  background: url(../img/hover/u768.png);
+  width: 14px;
+  height: 14px;
 }
 #table .top-table .icon-u772:hover{
-  background-image: url(../img/sprite.png);
-  background-position: -948px -174px;
+  background: url(../img/hover/u770.png);
+  width: 14px;
+  height: 14px;
 }
 #table .top-table .checkbox-on:hover{
-  background-image: url(../img/sprite.png);
-  background-position: -948px -174px;
+  background: url(../img/hover/u770.png);
+  width: 14px;
+  height: 14px;
 }
 #table .fol-table .table-k1 {
   width: 295px;
@@ -424,10 +478,10 @@ section {
   float: left;
 }
 #table .range {
-  width: 91px;
+  width: 88px;
   margin-left: 10px;
-  height: 24px;
-  line-height: 24px;
+  height: 28px;
+  line-height: 28px;
   text-align: center;
   cursor: pointer;
   border: 1px solid #fff;
@@ -545,8 +599,8 @@ section {
   display: none;
 }
 #fileupload {
-  width: 114px;
-  height: 42px;
+  width: 81px;
+  height: 20px;
   opacity: 0;
   -moz-opacity: 0;
   filter: alpha(opacity=0);
@@ -554,8 +608,8 @@ section {
   font-size: 100px;
   position: absolute;
   z-index: 999;
-  top: 0;
-  right: 0;
+  top: 23px;
+  right: 17px;
 }
 #fileuploads {
   width: 199px;
@@ -573,15 +627,11 @@ section {
   outline: none;
 }
 .file {
-  overflow: hidden;
-  width: 56px;
-  height: 42px;
-  overflow: hidden;
   float: left;
   font-size: 14px;
   color: #fff;
-  line-height: 42px;
-  margin-left: 8px;
+  margin-left: 5px;
+  margin-top: 24px;
   cursor: pointer;
 }
 .files {
@@ -736,7 +786,7 @@ section {
   margin: 23px 30px 0;
   float: right;
   font-size: 17px;
-  color: #FFFFFF;
+  color: #FFFFFF;    
   padding: 10px;
   border-radius: 3px;
   background: #ccc;
@@ -749,7 +799,7 @@ section {
   cursor: pointer;
 }
 #foot .isOk {
-  background: #f98953;
+  background: #ff8146;
   cursor: pointer;
   color: #fff;
 }
@@ -796,7 +846,7 @@ section {
   margin: 3px 0 0 4px;
 }
 .all-drop {
-  width: 91px;
+  width: 88px;
   left: 10px;
   *left:14px;
   top: 29px;
@@ -809,8 +859,9 @@ section {
 }
 .all-drop ul li {
   text-align: left;
-  line-height: 19px;
+  line-height: 27px;
   cursor: pointer;
+  text-indent: 20px;
 }
 .all-drop ul li:hover {
   background: #FEF2ED;
@@ -842,7 +893,6 @@ section {
   overflow: auto;
   height: 500px;
   width: 780px;
-  background: url(../img/sprite.png) #F98953;
   z-index: 99999;
 }
 #drag .foot ul li {
@@ -853,13 +903,15 @@ section {
   cursor: pointer;
 }
 #drag .foot ul .foot-r:hover i{
-  background-position: -1518px -86px;
+  background: url('../img/hover/u719.png');
+  width: 26px;
+  height: 20px;
 }
 #drag .foot ul .foot-k:hover i{
   background-position: -836px -86px;
 }
 #drag .foot ul li:hover .a {
-  color: #F9834A;
+  color: #ff8146;
 }
 #drag .foot ul li:active .a {
   color: #F85507;
@@ -904,12 +956,14 @@ section {
   display: block;
 }
 #drag .drag-centre .file-add:hover i{
-  background-image: url(../img/sprite.png);
-  background-position: -1006px -86px;
+  background: url(../img/hover/u570.png);
+  width: 228px;
+  height: 88px;
 }
 #drag .drag-centre .file-add:active i{
-  background-image: url(../img/sprite.png);
-  background-position: -1234px -86px;
+  background: url(../img/hover/u577.png);
+  width: 228px;
+  height: 88px;
 }
 /* 进度条 */
 .am-progress.am-active .am-progress-bar {

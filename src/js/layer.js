@@ -324,8 +324,8 @@ function KeyDown() {
 function _event() {
 
 	/**
-  * 禁止刷新屏蔽右键
-  */
+   * 禁止刷新屏蔽右键
+   */
 	document.onkeydown = function (e) {
 
 		var ev = window.event || e;
@@ -368,7 +368,7 @@ function _event() {
 	$('.fivePage').on('mousedown', function (e) {
 
 		try {
-			window.external.DeskTopIcon();
+			window.external.FivePage();
 		} catch (err) {}
 	});
 	//立即安装\下载更新\立即更新\重试

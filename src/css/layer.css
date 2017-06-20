@@ -95,23 +95,22 @@ body {
 }
 header {
 	width: 100%;
-	height: 28px;
-	line-height: 28px;
+	height: 40px;
+    line-height: 40px;
 	background: #f98953;
 }
 header .delete{
 	cursor: pointer;
 	float: right;
-	margin: 5px 10px 0 0;
+	margin: 10px 10px 0 0;
 }
 header .title {
 	float: left;
 	color: #fff;
-	font-size: 14px;
 	margin-left: 8px;
 	font-weight: 400;
     font-style: normal;
-    font-size: 13px;
+    font-size: 16px;
 }
 section {
 	height: 172px;
@@ -261,11 +260,11 @@ footer .button {
 	margin-left: 9px;
 }
 footer .button:hover{
-	background: #fa9a6b;
+	background: #ff8146;
 	color: #fff;
 }
 footer .button:active{
-	background: #f9834a;
+	background: #ff7737;
 	color: #fff;
 }
 footer .not {
