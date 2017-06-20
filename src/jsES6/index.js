@@ -653,7 +653,7 @@ function SetConvertProgress(option){
 	//文件路径转换
 	let path = Base64.encode(_option.filepath);
 	//转换页数范围显示
-	$('.range[data-filePath='+'"'+path+'"'+']').find('span').html(pages);
+	$('.range[data-filePath='+'"'+path+'"'+']').find('span').html(fivePage);
 
 	let _open = $('.open[data-filepath='+'"'+path+'"'+']');
 

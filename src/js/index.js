@@ -583,7 +583,7 @@ function SetConvertProgress(option) {
 	//文件路径转换
 	var path = Base64.encode(_option.filepath);
 	//转换页数范围显示
-	$('.range[data-filePath=' + '"' + path + '"' + ']').find('span').html(pages);
+	$('.range[data-filePath=' + '"' + path + '"' + ']').find('span').html(fivePage);
 
 	var _open = $('.open[data-filepath=' + '"' + path + '"' + ']');
 
@@ -1331,15 +1331,15 @@ function _event() {
 		var option = _path + "," + _pass;
 
 		try {
-			var _pages2 = window.external.ChangeConvertPage(_path, pageCount);
+			var pages = window.external.ChangeConvertPage(_path, pageCount);
 			//转换页数弹框点击取消按钮不改变输入框值
-			if (_pages2 !== '') {
+			if (pages !== '') {
 
 				$('.all[data-filePath=' + '"' + path + '"' + ']').html('所有页面').removeClass('none');
 
-				$('.range[data-filePath=' + '"' + path + '"' + ']').find('span').html(_pages2);
+				$('.range[data-filePath=' + '"' + path + '"' + ']').find('span').html(pages);
 
-				$('.other[data-filePath=' + '"' + path + '"' + ']').parents('tr').attr('data-pages', _pages2);
+				$('.other[data-filePath=' + '"' + path + '"' + ']').parents('tr').attr('data-pages', pages);
 			}
 		} catch (err) {}
 	});
