@@ -33,14 +33,20 @@ header {
 }
 .header-right ul li {
   float: left;
-  padding: 0 6px 7px;
+  padding: 0 5px 7px;
   color: #fff;
   cursor: pointer;
   margin-right: 1px;
 }
+.header-right .service {
+  padding: 0 3px 7px;
+}
 .header-right ul li i {
   display: block;
   margin-top: 7px;
+}
+.header-right ul li .icon-u7 {
+  margin-top: 9px;
 }
 .header-right ul li:hover {
   background: #FAA175;
@@ -54,15 +60,15 @@ header {
 .header-right .header-icon-land {
   display: block;
   float: left;
-  margin: 1px 4px 0 0;
+  margin: 0px 4px 0 0;
 }
 .header-right .service .a {
   color: #fff;
   font-size: 12px;
   float: left;
   display: block;
-  margin-top:7px;
-  *line-height: 17px;
+  margin-top:8px;
+  *line-height: 20px;
 }
 .header-right .miniDown {
   margin-top: 1px;
@@ -76,6 +82,15 @@ header {
   bottom: 0;
   left: 16px;
   height: 62px;
+}
+.header-file .header-hidden {
+  width: 81px;
+  height: 20px;
+  position: absolute;
+  z-index: 999;
+  top: 23px;
+  right: 17px;
+  overflow: hidden;
 }
 .header-file .file-maks {
   width: 114px;
@@ -119,8 +134,8 @@ header {
 }
 .land {
   position: absolute;
-  right: 152px;
-  padding: 0 4px 4px;
+  right: 141px;
+  padding: 1px 4px 4px;
   *width: 80px;
   cursor: pointer;
 }
@@ -148,16 +163,16 @@ header {
 .land img,.land .img {
   float: left;
   display: block;
-  margin-top: 4px;
+  margin-top: 3px;
   width: 24px;
   height: 24px;
   border-radius: 5px;
 }
 .no-land {
-  margin-top: 6px;
+  margin-top: 7px;
   color: #fff;
   font-size: 12px;
-  line-height: 20px;
+  line-height: 18px;
   text-align: left;
   height: 20px;
   cursor: pointer;
@@ -167,7 +182,7 @@ header {
 #drop {
   width: 148px;
   position: absolute;
-  right: 63px;
+  right: 59px;
   top: 38px;
   z-index: 9999999;
   background: #fdfdfd;
@@ -181,7 +196,7 @@ header {
 #drops {
   width: 102px;
   position: absolute;
-  right: 158px;
+  right: 146px;
   top: 38px;
   z-index: 9999999;
   background: #fdfdfd;
@@ -294,6 +309,7 @@ section .dashed {
 }
 #table table tr {
   border-bottom: 1px solid #f2f2f2;
+  position: relative;
 }
 #table table .tr:hover .icon-u758{
   background: url(../img/hover/u768.png);
@@ -509,21 +525,24 @@ section .dashed {
   display: block;
   position: absolute;
   top: 11px;
+  *top: 9.5px;
   right: 17px;
+  *right: 10px;
 }
 .success {
   text-align: left;
   color: #6FBE63;
+  *line-height: 38px;
 }
 .err {
   text-align: left;
   color: #F45E55;
+  *line-height: 38px;
 }
 .success i, .err i{
   display: block;
   float: left;
   margin: 10px 2px 0 22px;
-  *margin: 5px 2px 0 22px;
 }
 #foot {
   width: 100%;
@@ -599,7 +618,7 @@ section .dashed {
   display: none;
 }
 #fileupload {
-  width: 81px;
+  width: 85px;
   height: 20px;
   opacity: 0;
   -moz-opacity: 0;
@@ -608,11 +627,11 @@ section .dashed {
   font-size: 100px;
   position: absolute;
   z-index: 999;
-  top: 23px;
-  right: 17px;
+  top: 0px;
+  right: 0px;
 }
 #fileuploads {
-  width: 199px;
+  width: 202px;
   height: 59px;
   opacity: 0;
   -moz-opacity: 0;
@@ -621,10 +640,19 @@ section .dashed {
   font-size: 100px;
   position: absolute;
   z-index: 999;
-  top: 15px;
-  right: 14px;
+  top: 0px;
+  right: 5px;
   border-radius: 100px;
   outline: none;
+}
+.hidden {
+    overflow: hidden;
+    width: 199px;
+    height: 59px;
+    position: absolute;
+    z-index: 999;
+    top: 15px;
+    right: 14px;
 }
 .file {
   float: left;
@@ -632,6 +660,7 @@ section .dashed {
   color: #fff;
   margin-left: 5px;
   margin-top: 24px;
+  *margin-top: 27px;
   cursor: pointer;
 }
 .files {
@@ -712,7 +741,7 @@ section .dashed {
 #foot .drop-i {
   display: block;
   float: left;
-  margin: 8px 0 0 4px;
+  margin: 10px 0 0 4px;
   *margin-top: 7px;
 }
 #foot .foot-drop-k {
@@ -787,12 +816,8 @@ section .dashed {
   float: right;
   font-size: 17px;
   color: #FFFFFF;    
-<<<<<<< HEAD
   padding: 10px;
-=======
-  padding: 7px 10px;
->>>>>>> c13a6cde4ffdfe085dfff767b185e127bbd340a8
-  border-radius: 3px;
+  border-radius: 5px;
   background: #ccc;
   color: #fff;
   border: none;
@@ -852,8 +877,8 @@ section .dashed {
 .all-drop {
   width: 88px;
   left: 10px;
-  *left:14px;
-  top: 29px;
+  *left:16px;
+  top: 32px;
   border: 1px solid #bcbcbc;
   border-top: none;
   position: absolute;
@@ -923,7 +948,8 @@ section .dashed {
 #drag .foot ul li i {
   display: block;
   float: left;
-  margin: 13px 5px 0 0;
+  margin: 15px 5px 0 0;
+  *margin: 13px 5px 0 0;
 }
 #drag .foot {
   background: #fff;

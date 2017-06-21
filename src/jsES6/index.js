@@ -32,12 +32,11 @@ function handleFileSelect(evt) {
 		fileOption,
 		sendSize,
 		_type,
-		ieVersionSix = navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE6.0",
 		ieVersionSeven = navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE7.0",
 		ieVersionEight = navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE8.0",
 		ieVersionNine = navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE9.0"
 	
-	if(ieVersionSix || ieVersionSeven || ieVersionEight || ieVersionNine){
+	if(ieVersionSeven || ieVersionEight || ieVersionNine){
 
 		index_num--
 
@@ -166,6 +165,11 @@ function handleFileSelect(evt) {
  */
 function fileDrag(option){
 
+	//有文件转换无法继续添加
+	if(file_num === 1){
+		return;
+	}
+
 	let _option = JSON.parse(option)
 
 	let op = {},
@@ -185,6 +189,8 @@ function fileDrag(option){
 	let fileOK = true;
 
 	for(var i = 0, max = _option.length; i < max; i++){
+		//ie7所有页面下拉框层级兼容
+		index_num--;
 		//文件类型
 		_type = _option[i].fileType;
 		//文件路径
@@ -230,7 +236,8 @@ function fileDrag(option){
 			filePassword:fileOption.password,
 			filePages:fileOption.pages,
 			pages:fileOption._pages,
-			name:name
+			name:name,
+			z_index:"z-index:"+index_num
 		}
 
 	  	output.push(op);
@@ -652,8 +659,14 @@ function SetConvertProgress(option){
 	let fivePage = _option.pagerange;
 	//文件路径转换
 	let path = Base64.encode(_option.filepath);
-	//转换页数范围显示
-	$('.range[data-filePath='+'"'+path+'"'+']').find('span').html(fivePage);
+
+	if(fivePage === '1-5'){
+		//转换5页
+		$('.range[data-filePath='+'"'+path+'"'+']').find('span').html(fivePage);
+		//显示所有页面
+		$('.all[data-filePath='+'"'+path+'"'+']').html('所有页面')
+			   				 .removeClass('none');
+	}
 
 	let _open = $('.open[data-filepath='+'"'+path+'"'+']');
 
