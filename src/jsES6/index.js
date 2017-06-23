@@ -669,12 +669,12 @@ function SetConvertProgress(option){
 	}
 
 	let _open = $('.open[data-filepath='+'"'+path+'"'+']');
+	//不使用none（兼容ie7td高度差问题）
+	_open.nextAll('.tr-delete').find('.open-text').addClass('visibility');
 
-	_open.nextAll('.tr-delete').find('.open-text').addClass('none');
+	_open.nextAll('.tr-delete').find('.tr-delete-r').addClass('visibility');
 
-	_open.nextAll('.tr-delete').find('.tr-delete-r').addClass('none');
-
-	_open.nextAll('.tr-delete').find('.open-folder').addClass('none');
+	_open.nextAll('.tr-delete').find('.open-folder').addClass('visibility');
 
 	_open.find('.state')
 		.addClass('none')
@@ -714,26 +714,26 @@ function _changeCss(path, _path, $state){
  	if($state === ".success"){
 
  		_tr.find('.open-text').attr('data-success','true')
-    					   	  .removeClass('none')
+    					   	  .removeClass('visibility')
     					      .attr('data-int',_int)
     	.end()
     		.find('.open-folder').attr('data-success','true')
-    					         .removeClass('none')
+    					         .removeClass('visibility')
     	.end()
  	} else {
 
  		_tr.find('.success').addClass('none')
  		.end()
- 			.find('.open-text').addClass('none')
+ 			.find('.open-text').addClass('visibility')
  		.end()
- 			.find('.open-folder').addClass('none')
+ 			.find('.open-folder').addClass('visibility')
  		.end()
  	}
 
  	_tr.find('.am-progress')
     	.addClass('none')
     .end()
-    	.find('.tr-delete-r').removeClass('none')
+    	.find('.tr-delete-r').removeClass('visibility')
     .end()
     	.find('.range').addClass('range-on')
     				   .removeClass('Not-allowed')
@@ -1533,7 +1533,7 @@ function _event(){
 
 		try
 		{
-		   window.external.OpenUrl("http://pdftoword.foxitreader.cn");
+		   window.external.OpenUrl("http://pdftoword.foxitreader.cn/index");
 		}
 		catch(err)
 		{

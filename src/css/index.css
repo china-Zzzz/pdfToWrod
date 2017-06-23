@@ -144,7 +144,6 @@ header {
 }
 .land p {
   float: left;
-  width: 40px\9;
   *width: 40px;
   margin: 6px 2px 0 7px;
   *margin: -15px 2px 0 7px;
@@ -170,9 +169,11 @@ header {
 }
 .no-land {
   margin-top: 7px;
+  *margin-top: 8px;
   color: #fff;
   font-size: 12px;
   line-height: 18px;
+  *line-height: 20px;
   text-align: left;
   height: 20px;
   cursor: pointer;
@@ -498,6 +499,7 @@ section .dashed {
   margin-left: 10px;
   height: 28px;
   line-height: 28px;
+  *line-height: 30px;
   text-align: center;
   cursor: pointer;
   border: 1px solid #fff;
@@ -616,6 +618,9 @@ section .dashed {
 }
 .none {
   display: none;
+}
+.visibility {
+  visibility: hidden
 }
 #fileupload {
   width: 85px;

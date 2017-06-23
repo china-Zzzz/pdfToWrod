@@ -598,12 +598,12 @@ function SetConvertProgress(option) {
 	}
 
 	var _open = $('.open[data-filepath=' + '"' + path + '"' + ']');
+	//不使用none（兼容ie7td高度差问题）
+	_open.nextAll('.tr-delete').find('.open-text').addClass('visibility');
 
-	_open.nextAll('.tr-delete').find('.open-text').addClass('none');
+	_open.nextAll('.tr-delete').find('.tr-delete-r').addClass('visibility');
 
-	_open.nextAll('.tr-delete').find('.tr-delete-r').addClass('none');
-
-	_open.nextAll('.tr-delete').find('.open-folder').addClass('none');
+	_open.nextAll('.tr-delete').find('.open-folder').addClass('visibility');
 
 	_open.find('.state').addClass('none').end().find('.am-progress').removeClass('none').end().find('.am-progress-bar').css('width', num).end();
 }
@@ -634,13 +634,13 @@ function _changeCss(path, _path, $state) {
 	//转换成功显示"打开文件","打开文件夹"
 	if ($state === ".success") {
 
-		_tr.find('.open-text').attr('data-success', 'true').removeClass('none').attr('data-int', _int).end().find('.open-folder').attr('data-success', 'true').removeClass('none').end();
+		_tr.find('.open-text').attr('data-success', 'true').removeClass('visibility').attr('data-int', _int).end().find('.open-folder').attr('data-success', 'true').removeClass('visibility').end();
 	} else {
 
-		_tr.find('.success').addClass('none').end().find('.open-text').addClass('none').end().find('.open-folder').addClass('none').end();
+		_tr.find('.success').addClass('none').end().find('.open-text').addClass('visibility').end().find('.open-folder').addClass('visibility').end();
 	}
 
-	_tr.find('.am-progress').addClass('none').end().find('.tr-delete-r').removeClass('none').end().find('.range').addClass('range-on').removeClass('Not-allowed').end().find('.checkbox').removeClass('checkbox-on').end().find($state).removeClass('none').end().find('.am-progress-bar').css('width', 0).end();
+	_tr.find('.am-progress').addClass('none').end().find('.tr-delete-r').removeClass('visibility').end().find('.range').addClass('range-on').removeClass('Not-allowed').end().find('.checkbox').removeClass('checkbox-on').end().find($state).removeClass('none').end().find('.am-progress-bar').css('width', 0).end();
 
 	_tr.attr('data-isOk', '0').attr('data-path', _path);
 
@@ -1280,7 +1280,7 @@ function _event() {
 	$('.open-url').on('mousedown', function () {
 
 		try {
-			window.external.OpenUrl("http://pdftoword.foxitreader.cn");
+			window.external.OpenUrl("http://pdftoword.foxitreader.cn/index");
 		} catch (err) {}
 	});
 	//下拉列表

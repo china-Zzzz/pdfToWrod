@@ -24,13 +24,13 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-u107 {
   background-image: url(../img/sprite.png);
-  background-position: -258px -568px;
+  background-position: -320px -568px;
   width: 12px;
   height: 12px;
 }
 .icon-u12 {
   background-image: url(../img/sprite.png);
-  background-position: -228px -568px;
+  background-position: -276px -568px;
   width: 16px;
   height: 16px;
 }
@@ -42,55 +42,55 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-u152 {
   background-image: url(../img/sprite.png);
-  background-position: -750px -536px;
+  background-position: -630px -536px;
   width: 16px;
   height: 16px;
 }
 .icon-u155 {
   background-image: url(../img/sprite.png);
-  background-position: -590px -536px;
+  background-position: -758px -536px;
   width: 16px;
   height: 16px;
 }
 .icon-u164 {
   background-image: url(../img/sprite.png);
-  background-position: -574px -536px;
+  background-position: -614px -536px;
   width: 16px;
   height: 16px;
 }
 .icon-u166 {
   background-image: url(../img/sprite.png);
-  background-position: -670px -536px;
+  background-position: -662px -536px;
   width: 16px;
   height: 16px;
 }
 .icon-u19 {
   background-image: url(../img/sprite.png);
-  background-position: -638px -536px;
+  background-position: -710px -536px;
   width: 16px;
   height: 16px;
 }
 .icon-u217 {
   background-image: url(../img/sprite.png);
-  background-position: -686px -536px;
+  background-position: -726px -536px;
   width: 16px;
   height: 16px;
 }
 .icon-u42 {
   background-image: url(../img/sprite.png);
-  background-position: -310px -536px;
+  background-position: -336px -536px;
   width: 26px;
   height: 20px;
 }
 .icon-u48 {
   background-image: url(../img/sprite.png);
-  background-position: -336px -536px;
+  background-position: -284px -536px;
   width: 26px;
   height: 20px;
 }
 .icon-u5 {
   background-image: url(../img/sprite.png);
-  background-position: -702px -536px;
+  background-position: -228px -568px;
   width: 16px;
   height: 16px;
 }
@@ -102,31 +102,31 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-u574 {
   background-image: url(../img/sprite.png);
-  background-position: -494px -536px;
+  background-position: -434px -536px;
   width: 20px;
   height: 20px;
 }
 .icon-u576 {
   background-image: url(../img/sprite.png);
-  background-position: -514px -536px;
+  background-position: -414px -536px;
   width: 20px;
   height: 20px;
 }
 .icon-u601 {
   background-image: url(../img/sprite.png);
-  background-position: -362px -536px;
+  background-position: -388px -536px;
   width: 26px;
   height: 20px;
 }
 .icon-u607 {
   background-image: url(../img/sprite.png);
-  background-position: -388px -536px;
+  background-position: -362px -536px;
   width: 26px;
   height: 20px;
 }
 .icon-u613 {
   background-image: url(../img/sprite.png);
-  background-position: -414px -536px;
+  background-position: -594px -536px;
   width: 20px;
   height: 20px;
 }
@@ -144,61 +144,79 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-u677 {
   background-image: url(../img/sprite.png);
-  background-position: -606px -536px;
+  background-position: -742px -536px;
   width: 16px;
   height: 16px;
 }
 .icon-u678 {
   background-image: url(../img/sprite.png);
-  background-position: -622px -536px;
+  background-position: -646px -536px;
   width: 16px;
   height: 16px;
 }
 .icon-u698 {
   background-image: url(../img/sprite.png);
-  background-position: -534px -536px;
+  background-position: -494px -536px;
   width: 20px;
   height: 20px;
 }
+.icon-u6981 {
+  background-image: url(../img/sprite.png);
+  background-position: -678px -536px;
+  width: 16px;
+  height: 16px;
+}
 .icon-u7 {
   background-image: url(../img/sprite.png);
-  background-position: -654px -536px;
+  background-position: -694px -536px;
   width: 16px;
   height: 16px;
 }
 .icon-u701 {
   background-image: url(../img/sprite.png);
-  background-position: -454px -536px;
+  background-position: -514px -536px;
+  width: 20px;
+  height: 20px;
+}
+.icon-u7011 {
+  background-image: url(../img/sprite.png);
+  background-position: -534px -536px;
   width: 20px;
   height: 20px;
 }
 .icon-u703 {
   background-image: url(../img/sprite.png);
-  background-position: -434px -536px;
+  background-position: -554px -536px;
+  width: 20px;
+  height: 20px;
+}
+.icon-u7031 {
+  background-image: url(../img/sprite.png);
+  background-position: -574px -536px;
   width: 20px;
   height: 20px;
 }
 .icon-u725 {
   background-image: url(../img/sprite.png);
-  background-position: -284px -536px;
+  background-position: -310px -536px;
   width: 26px;
   height: 20px;
 }
 .icon-u748 {
   background-image: url(../img/sprite.png);
-  background-position: -718px -536px;
+  background-position: -244px -568px;
   width: 16px;
   height: 16px;
 }
 .icon-u758 {
   background-image: url(../img/sprite.png);
-  background-position: -244px -568px;
+  background-position: -306px -568px;
   width: 14px;
   height: 14px;
 }
 .icon-u772 {
   background-image: url(../img/sprite.png);
-  background-position: -766px -536px;
+  background-position: -292px -568px;
   width: 14px;
   height: 14px;
 }
@@ -210,19 +228,19 @@ To change `display` (e.g. `display: inline-block;`), we suggest using a common C
 }
 .icon-u9 {
   background-image: url(../img/sprite.png);
-  background-position: -734px -536px;
+  background-position: -260px -568px;
   width: 16px;
   height: 16px;
 }
 .icon-u922 {
   background-image: url(../img/sprite.png);
-  background-position: -554px -536px;
+  background-position: -454px -536px;
   width: 20px;
   height: 20px;
 }
 .icon-u924 {
   background-image: url(../img/sprite.png);
-  background-position: -270px -568px;
+  background-position: -332px -568px;
   width: 16px;
   height: 9px;
 }
