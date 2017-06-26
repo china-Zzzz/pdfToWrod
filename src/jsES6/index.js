@@ -1,3 +1,6 @@
+if(navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion .split(";")[1].replace(/[ ]/g,"")=="MSIE7.0"){
+	alert('ie7')
+}
 var file_num = 0;
 //判断滚动条是否首次加载
 var scrollbarOK = false;
