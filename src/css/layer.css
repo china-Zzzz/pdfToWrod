@@ -162,7 +162,7 @@ section p {
 	overflow: hidden;
 	text-overflow:ellipsis;
 	white-space: nowrap;
-    max-width: 220px;
+    max-width: 270px;
 }
 section .progress-p {
 	width: 320px;
