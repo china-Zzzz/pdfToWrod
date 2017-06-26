@@ -62,7 +62,7 @@ body {
 }
 #pay .footer-button .fivePage {
 	padding: 2px 13px;
-    border: 1px solid #F98953;
+    border: 1px solid #ff8146;
 }
 #pages {
 	border: 1px solid #ccc;
@@ -269,10 +269,10 @@ footer .button:active{
 }
 footer .not {
 	background: #fff;
-	color: #F98953;
+	color: #ff8146;
 }
 footer .ok {
-	background: #F98953;
+	background: #ff8146;
 	color: #fff;
 }
 footer .footer-button {
@@ -313,7 +313,7 @@ footer .fivePage,
 footer .password,
 footer .land{
 	padding: 2px 22px;
-	border: 1px solid #F98953;
+	border: 1px solid #ff8146;
 }
 footer .member, footer .download{
 	padding: 4px 10px;
@@ -358,7 +358,7 @@ footer .password {
 	right: 75px;
 	*right: 156px;
     top: 0px;
-    background: #F98953;
+    background: #ff8146;
     opacity: 0.1;
     filter: alpha(opacity=10);
 }
