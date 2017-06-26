@@ -100,8 +100,9 @@
     </header>
     <section>
       <div class="password-p">
-        <p class="password-p-t" title="{{this.text}}" onselectstart="return false;">{{this.text}}</p>
-        <p onselectstart="return false;">是加密文档，需要输入密码进行转换</p>
+        {{#each this.text}} 
+          <p class="password-p-t" title="{{this}}" onselectstart="return false;">{{this}}</p>
+        {{/each}}
       </div>
       <div class="password-input">
         <label>
