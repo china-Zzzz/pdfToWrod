@@ -11,9 +11,6 @@ body {
   user-select:none;
 }
 header {
-  height: 86px;
-  width: 780px;
-  background: url(../img/sprite.png) #F98953;
   position: relative;
   z-index: 9999;
   *z-index: 0;
@@ -49,10 +46,10 @@ header {
   margin-top: 9px;
 }
 .header-right ul li:hover {
-  background: #FAA175;
+  background: #ffae80;
 }
 .header-right ul .delete:hover {
-  background: #fa3929;
+  background: #fb6155;
 }
 .header-right ul .delete:active {
   background: #fb6155;
@@ -646,7 +643,7 @@ section .dashed {
   position: absolute;
   z-index: 999;
   top: 0px;
-  right: 5px;
+  right: 1px;
   border-radius: 100px;
   outline: none;
 }

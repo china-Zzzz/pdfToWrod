@@ -260,7 +260,7 @@ function _css() {
 
 	var _length = $('.section-p').find('p').length;
 
-	var _width = $('.footer-button').find('.button').outerWidth();
+	var _width = $('.footer-button').find('.button').outerWidth(true);
 
 	var $width = $('.top').outerWidth();
 
@@ -272,18 +272,18 @@ function _css() {
 
 	if (length === 1) {
 
-		$('footer').css("margin-left", -((_width * length + 20) / 2));
+		$('footer').css("margin-left", -(_width / 2) - 5);
 
 		//ie7
 		if (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE7.0") {
 
 			$('.footer-button').width(_width + 10);
 
-			$('footer').css("margin-left", -((_width * length + 20) / 2) - 55);
+			$('footer').css("margin-left", -((_width + 20) / 2) - 55);
 		}
 	} else if (length === 2) {
 
-		$('footer').css("margin-left", -((_width * length + 20) / 2 + 5));
+		$('footer').css("margin-left", -(_width * length / 2) - 5);
 
 		//ie7
 		if (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE7.0") {
@@ -307,8 +307,6 @@ function _css() {
 	} else if (_length === 3) {
 
 		$('.section-p').css('margin-top', '0px');
-
-		$('footer').css("margin-left", -((_width * length + 20) / 2 + 5));
 	}
 }
 /**
