@@ -137,7 +137,7 @@ header {
   cursor: pointer;
 }
 .land:hover {
-  background: #ffb28e;
+  background: #ffae80;
 }
 .land p {
   float: left;
@@ -993,6 +993,11 @@ section .dashed {
   height: 88px;
 }
 #drag .drag-centre .file-add:active i{
+  background: url(../img/hover/u577.png);
+  width: 228px;
+  height: 88px;
+}
+#drag .drag-centre .file-add .i-active {
   background: url(../img/hover/u577.png);
   width: 228px;
   height: 88px;

@@ -1,8 +1,5 @@
 "use strict";
 
-if (navigator.appName == "Microsoft Internet Explorer" && navigator.appVersion.split(";")[1].replace(/[ ]/g, "") == "MSIE7.0") {
-	alert('ie7');
-}
 var file_num = 0;
 //判断滚动条是否首次加载
 var scrollbarOK = false;
@@ -937,6 +934,16 @@ function _event() {
 	$('#fileuploads').on('change', function (e) {
 
 		handleFileSelect(e);
+	});
+	//添加点击样式(兼容ie)
+	$('#fileuploads').on('mousedown', function (e) {
+
+		$('.icon-u614').addClass('i-active');
+	});
+	//去除点击样式(兼容ie)
+	$('#fileuploads').on('mouseup', function (e) {
+
+		$('.icon-u614').removeClass('i-active');
 	});
 	//转换格式\保存路径下拉框mousedown
 	$('.drop-r').on('mousedown', function (e) {
