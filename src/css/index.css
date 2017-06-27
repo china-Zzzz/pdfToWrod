@@ -944,6 +944,9 @@ section .dashed {
 #drag .foot ul li:hover .a {
   color: #ff8146;
 }
+#drag .foot ul li .a:hover{
+  color: #ff8146;
+}
 #drag .foot ul li:active .a {
   color: #F85507;
 }
@@ -987,7 +990,7 @@ section .dashed {
 #drag .drag-centre .file-add i {
   display: block;
 }
-#drag .drag-centre .file-add:hover i{
+#drag .file-add:hover i{
   background: url(../img/hover/u570.png);
   width: 228px;
   height: 88px;

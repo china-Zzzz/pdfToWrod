@@ -1090,6 +1090,12 @@ function _event(){
 		$('.icon-u614').removeClass('i-active'); 
 
 	})
+	//去除点击样式(兼容ie)
+	$('#fileuploads').on('mouseout', (e) =>{
+
+		$('.icon-u614').removeClass('i-active'); 
+
+	})
 	//转换格式\保存路径下拉框mousedown
 	$('.drop-r').on('mousedown', (e) =>{
 
