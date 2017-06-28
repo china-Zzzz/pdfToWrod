@@ -950,6 +950,9 @@ section .dashed {
 #drag .foot ul li:active .a {
   color: #F85507;
 }
+#drag .foot ul li .a:active {
+  color: #F85507;
+}
 #drag .foot ul li i {
   display: block;
   float: left;
